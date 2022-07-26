@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroesandcomics
+package ru.coolhabit.marvelheroes
 
 import org.junit.Test
 
