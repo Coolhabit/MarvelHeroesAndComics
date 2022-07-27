@@ -2,11 +2,23 @@ package ru.coolhabit.marvelheroes.ioc.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import ru.coolhabit.marvelheroes.heroes.presentation.HeroFragment
+import ru.coolhabit.marvelheroes.heroes.presentation.HeroesFragment
+import ru.marvelheroes.comics.presentation.ComicsFragment
+import ru.marvelheroes.myavengers.presentation.MyAvengersFragment
+import ru.marvelheroes.settings.presentation.SettingsFragment
 
 @Module(includes = [ViewModelModule::class, ActivityModule::class])
 abstract class FragmentsModule {
 
     @ContributesAndroidInjector
-    abstract fun provideHeroesFragment(): HeroFragment
+    abstract fun provideHeroesFragment(): HeroesFragment
+
+    @ContributesAndroidInjector
+    abstract fun provideComicsFragment(): ComicsFragment
+
+    @ContributesAndroidInjector
+    abstract fun provideMyAvengersFragment(): MyAvengersFragment
+
+    @ContributesAndroidInjector
+    abstract fun provideSettingsFragment(): SettingsFragment
 }

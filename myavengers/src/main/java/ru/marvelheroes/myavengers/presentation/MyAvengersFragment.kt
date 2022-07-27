@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation
+package ru.marvelheroes.myavengers.presentation
 
 import android.content.Context
 import android.os.Bundle
@@ -9,20 +9,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.AndroidSupportInjection
-import ru.coolhabit.marvelheroes.heroes.R
-import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHomeBinding
+import ru.marvelheroes.myavengers.R
+import ru.marvelheroes.myavengers.databinding.FragmentMyAvengersBinding
 import javax.inject.Inject
 
-class HeroFragment : Fragment(R.layout.fragment_home) {
+class MyAvengersFragment : Fragment(R.layout.fragment_my_avengers) {
 
     private val viewModel by lazy {
-        ViewModelProvider.NewInstanceFactory().create(HeroesViewModel::class.java)
+        ViewModelProvider.NewInstanceFactory().create(MyAvengersViewModel::class.java)
     }
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentMyAvengersBinding
 
     protected val mainActivity: AppCompatActivity?
         get() = activity as? AppCompatActivity
@@ -36,7 +36,7 @@ class HeroFragment : Fragment(R.layout.fragment_home) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentMyAvengersBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

@@ -50,6 +50,9 @@ android {
 }
 
 dependencies {
+    testImplementation junit
+    androidTestImplementation android_test
+
     implementation core_ktx
     coreLibraryDesugaring desugaring
 

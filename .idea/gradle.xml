@@ -12,7 +12,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baseUI" />
+            <option value="$PROJECT_DIR$/comics" />
             <option value="$PROJECT_DIR$/heroes" />
+            <option value="$PROJECT_DIR$/myavengers" />
+            <option value="$PROJECT_DIR$/settings" />
           </set>
         </option>
       </GradleProjectSettings>

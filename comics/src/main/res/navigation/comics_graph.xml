@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/heroes_graph"
-    app:startDestination="@id/fragment_heroes">
+    android:id="@+id/comics_graph"
+    app:startDestination="@id/fragment_comic">
 
     <fragment
-        android:id="@+id/fragment_heroes"
-        android:name="ru.coolhabit.marvelheroes.heroes.presentation.HeroesFragment"
-        tools:layout="@layout/fragment_heroes">
+        android:id="@+id/fragment_comic"
+        android:name="ru.marvelheroes.comics.presentation.ComicsFragment"
+        tools:layout="@layout/fragment_comics">
     </fragment>
 </navigation>

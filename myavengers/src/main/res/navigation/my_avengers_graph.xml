@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_avengers_graph"
+    app:startDestination="@id/fragment_my_avengers">
+
+    <fragment
+        android:id="@+id/fragment_my_avengers"
+        android:name="ru.marvelheroes.myavengers.presentation.MyAvengersFragment"
+        tools:layout="@layout/fragment_my_avengers">
+    </fragment>
+</navigation>
