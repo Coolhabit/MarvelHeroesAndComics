@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.support.AndroidSupportInjection
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroesBinding
+import ru.marvelheroes.presentation.adapter.ItemDecoration
 import javax.inject.Inject
 
 class HeroesFragment : Fragment(R.layout.fragment_heroes) {
@@ -27,6 +29,9 @@ class HeroesFragment : Fragment(R.layout.fragment_heroes) {
     protected val mainActivity: AppCompatActivity?
         get() = activity as? AppCompatActivity
 
+    @Inject
+    lateinit var heroAdapter: HeroAdapter
+
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
@@ -38,5 +43,26 @@ class HeroesFragment : Fragment(R.layout.fragment_heroes) {
     ): View? {
         binding = FragmentHeroesBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.rvHeroList.apply {
+            adapter = heroAdapter
+            itemAnimator = null
+            addItemDecoration(
+                ItemDecoration(
+                    context,
+                    top = ru.marvelheroes.R.dimen.spacing_20,
+                    right = ru.marvelheroes.R.dimen.spacing_20,
+                    left = ru.marvelheroes.R.dimen.spacing_20,
+                    bottom = ru.marvelheroes.R.dimen.spacing_20,
+                )
+            )
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        }
+        heroAdapter.submitList(viewModel.loadHeroList())
     }
 }
