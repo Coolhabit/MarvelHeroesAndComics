@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "MarvelHeroesAndComics"
 include ':app'
 include ':heroes'
+include ':baseUI'

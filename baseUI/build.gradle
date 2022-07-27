@@ -51,11 +51,29 @@ android {
 
 dependencies {
     implementation core_ktx
+    kapt kotlinx_metadata
     coreLibraryDesugaring desugaring
 
-    // coroutines
-    implementation kotlinx_coroutines_core
-    implementation kotlinx_coroutines_android
+    testImplementation junit
+    androidTestImplementation android_test
+
+    // android
+    implementation appcompat
+    implementation material
+    implementation constraintlayout
+    implementation fragment_ktx
+    implementation viewpager2
+    implementation swiperefreshlayout
+    implementation recyclerview
+
+    // viewModel and liveData
+    implementation lifecycle_runtime_ktx
+    implementation lifecycle_common_java8
+    implementation lifecycle_viewmodel_ktx
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    kapt lifecycle_compiler
+    implementation lifecycle_process
+    implementation lifecycle_extensions
 
     // dagger 2
     implementation dagger
@@ -68,5 +86,10 @@ dependencies {
     implementation navigation_fragment_ktx
     implementation navigation_ui_ktx
 
-    implementation project(':baseUI')
+    // permissions
+    implementation kpermissions
+    implementation kpermissionsCoroutines
+
+    implementation glide_core
+    kapt glide_kapt
 }

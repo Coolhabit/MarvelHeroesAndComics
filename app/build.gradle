@@ -83,4 +83,5 @@ dependencies {
     implementation navigation_ui_ktx
 
     implementation project(":heroes")
+    implementation project(':baseUI')
 }
