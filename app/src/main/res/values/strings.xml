@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MarvelHeroesAndComics</string>
+    <string name="heroes">Heroes</string>
+    <string name="comics">Comics</string>
+    <string name="my_avengers">My Avengers</string>
+    <string name="settings">Settings</string>
 </resources>

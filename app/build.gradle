@@ -81,4 +81,12 @@ dependencies {
     // navigation
     implementation navigation_fragment_ktx
     implementation navigation_ui_ktx
+
+    implementation project(":heroes")
+    implementation project(":comics")
+    implementation project(":myavengers")
+    implementation project(":settings")
+    implementation project(':baseUI')
+    implementation project(':data')
+    implementation project(':domain')
 }

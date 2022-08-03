@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/heroes_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_heroes"
+        android:title="@string/heroes"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/comics_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_comics_book"
+        android:title="@string/comics"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/my_avengers_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_avengers"
+        android:title="@string/my_avengers"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/settings_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings"
+        app:showAsAction="withText" />
+</menu>

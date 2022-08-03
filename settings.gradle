@@ -14,3 +14,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MarvelHeroesAndComics"
 include ':app'
+include ':heroes'
+include ':baseUI'
+include ':comics'
+include ':myavengers'
+include ':settings'
+include ':data'
+include ':domain'

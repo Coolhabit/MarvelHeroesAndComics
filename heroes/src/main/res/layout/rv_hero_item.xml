@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hero_card"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_200"
+    android:layout_gravity="center_horizontal"
+    app:cardCornerRadius="@dimen/spacing_16">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hero_card_layout"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/hero_poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/hero_name"
+            style="@style/Black40TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/hero_name_background"
+            app:layout_constraintEnd_toEndOf="@id/hero_poster"
+            app:layout_constraintBottom_toBottomOf="@id/hero_poster"
+            tools:text="Iron Man"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
