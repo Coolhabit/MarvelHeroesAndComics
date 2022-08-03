@@ -1,27 +1,24 @@
 package ru.coolhabit.marvelheroes.heroes.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
+import ru.marvelheroes.entities.dto.hero.Hero
+import ru.marvelheroes.usecases.HeroesUseCase
 import javax.inject.Inject
 
-class HeroesViewModel @Inject constructor() : ViewModel() {
+class HeroesViewModel @Inject constructor(
+    private val useCase: HeroesUseCase,
+) : ViewModel() {
 
-    fun loadHeroList(): List<Hero> {
-        return mutableListOf(
-            Hero(
-                heroId = "1",
-                heroName = "Doctor Strange",
-                heroPoster = "file:///android_asset/doctor_strange.jpg"
-            ),
-            Hero(
-                heroId = "2",
-                heroName = "Iron Man",
-                heroPoster = "file:///android_asset/iron_man.jpg"
-            ),
-            Hero(
-                heroId = "3",
-                heroName = "Thor",
-                heroPoster = "file:///android_asset/thor.jpg"
-            )
-        )
+    private val _load = MutableSharedFlow<List<Hero>>()
+    val load = _load.asSharedFlow()
+
+    fun loadHeroList() {
+        viewModelScope.launch {
+            _load.emit(useCase.loadHeroesList())
+        }
     }
 }

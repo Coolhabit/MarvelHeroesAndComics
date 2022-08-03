@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation
+package ru.marvelheroes.entities.dto.hero
 
 data class Hero(
     val heroId: String,

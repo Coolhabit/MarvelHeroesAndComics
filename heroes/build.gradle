@@ -72,4 +72,6 @@ dependencies {
     implementation navigation_ui_ktx
 
     implementation project(':baseUI')
+    implementation project(':data')
+    implementation project(':domain')
 }

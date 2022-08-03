@@ -87,4 +87,6 @@ dependencies {
     implementation project(":myavengers")
     implementation project(":settings")
     implementation project(':baseUI')
+    implementation project(':data')
+    implementation project(':domain')
 }
