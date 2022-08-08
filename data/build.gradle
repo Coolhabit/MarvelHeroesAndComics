@@ -85,5 +85,7 @@ dependencies {
     implementation retrofit_gson
     implementation retrofit_log
 
+    implementation okhttp
+
     implementation project(":domain")
 }

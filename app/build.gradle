@@ -82,6 +82,12 @@ dependencies {
     implementation navigation_fragment_ktx
     implementation navigation_ui_ktx
 
+    implementation okhttp
+
+    implementation retrofit
+    implementation retrofit_gson
+    implementation retrofit_log
+
     implementation project(":heroes")
     implementation project(":comics")
     implementation project(":myavengers")

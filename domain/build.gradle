@@ -63,4 +63,6 @@ dependencies {
     implementation retrofit
     implementation retrofit_gson
     implementation retrofit_log
+
+    implementation okhttp
 }
