@@ -58,4 +58,9 @@ dependencies {
     implementation dagger_android_support
     kapt dagger_android_processor
     kapt dagger_compiler
+
+    //retrofit
+    implementation retrofit
+    implementation retrofit_gson
+    implementation retrofit_log
 }

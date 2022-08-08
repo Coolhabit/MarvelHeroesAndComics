@@ -80,5 +80,10 @@ dependencies {
 
     implementation joda_time
 
+    //retrofit
+    implementation retrofit
+    implementation retrofit_gson
+    implementation retrofit_log
+
     implementation project(":domain")
 }
