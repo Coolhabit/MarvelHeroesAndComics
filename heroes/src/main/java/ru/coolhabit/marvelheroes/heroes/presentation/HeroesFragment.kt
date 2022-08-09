@@ -45,10 +45,10 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
             addItemDecoration(
                 ItemDecoration(
                     context,
-                    top = ru.marvelheroes.R.dimen.spacing_20,
-                    right = ru.marvelheroes.R.dimen.spacing_20,
-                    left = ru.marvelheroes.R.dimen.spacing_20,
-                    bottom = ru.marvelheroes.R.dimen.spacing_20,
+                    top = R.dimen.spacing_12,
+                    right = R.dimen.spacing_20,
+                    left = R.dimen.spacing_20,
+                    bottom = R.dimen.spacing_8,
                 )
             )
             layoutManager =

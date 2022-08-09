@@ -1,9 +1,7 @@
-package ru.marvelheroes.core.api
+package ru.marvelheroes.data.network
 
 import retrofit2.http.GET
-import ru.marvelheroes.entities.MarvelApiResponse
-
-private const val API_KEY = "api_key"
+import ru.marvelheroes.data.network.entities.MarvelApiResponse
 
 interface MarvelApi {
     @GET("/v1/public/characters")

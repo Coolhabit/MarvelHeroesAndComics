@@ -1,11 +1,4 @@
-package ru.marvelheroes.entities
-
-import ru.marvelheroes.entities.Comics
-import ru.marvelheroes.entities.Events
-import ru.marvelheroes.entities.Series
-import ru.marvelheroes.entities.Stories
-import ru.marvelheroes.entities.Thumbnail
-import ru.marvelheroes.entities.Url
+package ru.marvelheroes.data.network.entities
 
 data class Result(
     val comics: Comics,

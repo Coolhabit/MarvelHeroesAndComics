@@ -1,6 +1,4 @@
-package ru.marvelheroes.entities
-
-import ru.marvelheroes.entities.Item
+package ru.marvelheroes.data.network.entities
 
 data class Series(
     val available: String,

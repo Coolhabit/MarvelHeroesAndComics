@@ -5,31 +5,26 @@ import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.marvelheroes.core.api.MarvelApi
+import ru.marvelheroes.data.extensions.md5
+import ru.marvelheroes.data.network.MarvelApi
 import ru.marvelheroes.data.utils.API
 import ru.marvelheroes.data.utils.ApiConstants
-import java.math.BigInteger
-import java.security.MessageDigest
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-const val HASH = "hash"
-const val APIKEY = "apikey"
-const val TS = "ts"
-const val TS_VALUE = "1"
-
-fun String.md5(): String {
-    val md = MessageDigest.getInstance("MD5")
-    return BigInteger(1, md.digest(toByteArray())).toString(16).padStart(32, '0')
-}
+private const val HASH = "hash"
+private const val APIKEY = "apikey"
+private const val TS = "ts"
+private const val TS_VALUE = "1"
+private const val TIMEOUT = 30L
 
 @Module
 class RemoteModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
-        .callTimeout(30, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
+        .callTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT, TimeUnit.SECONDS)
         .addInterceptor { chain ->
             val defaultRequest = chain.request()
             val hashSignature = "$TS_VALUE${API.PRIVATE_KEY}${API.PUBLIC_KEY}".md5()

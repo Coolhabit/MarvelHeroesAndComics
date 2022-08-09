@@ -1,7 +1,6 @@
-package ru.marvelheroes.data.entities
+package ru.marvelheroes.data.network.entities
 
 import com.google.gson.annotations.SerializedName
-import ru.marvelheroes.entities.Data
 
 private const val CODE = "code"
 private const val STATUS = "status"

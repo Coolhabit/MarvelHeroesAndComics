@@ -1,7 +1,7 @@
-package ru.marvelheroes.data
+package ru.marvelheroes.data.network.services
 
 import ru.marvelheroes.core.api.IHeroesApiService
-import ru.marvelheroes.core.api.MarvelApi
+import ru.marvelheroes.data.network.MarvelApi
 import ru.marvelheroes.entities.dto.hero.Hero
 
 class MarvelHeroesService(private val api: MarvelApi) : IHeroesApiService {

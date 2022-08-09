@@ -1,4 +1,4 @@
-package ru.marvelheroes.data.entities
+package ru.marvelheroes.data.network.entities
 
 data class ItemXXX(
     val name: String,

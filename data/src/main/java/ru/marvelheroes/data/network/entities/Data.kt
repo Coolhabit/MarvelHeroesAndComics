@@ -1,6 +1,4 @@
-package ru.marvelheroes.data.entities
-
-import ru.marvelheroes.entities.Result
+package ru.marvelheroes.data.network.entities
 
 data class Data(
     val offset: String,
