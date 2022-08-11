@@ -40,6 +40,13 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        heroAdapter.addLoadStateListener { state ->
+            binding.apply {
+                rvHeroList.isVisible = state.refresh != LoadState.Loading
+                overallProgress.isVisible = state.refresh == LoadState.Loading
+            }
+        }
+
         binding.rvHeroList.apply {
             adapter = heroAdapter
             itemAnimator = null
