@@ -1,35 +1,37 @@
-package ru.marvelheroes.data.network
+package ru.marvelheroes.data.network.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import retrofit2.HttpException
+import ru.marvelheroes.data.network.MarvelApi
+import ru.marvelheroes.data.network.mappers.toComics
+import ru.marvelheroes.entities.dto.comics.Comics
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
-import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.extensions.NULL
 
-class HeroesPagingSource @AssistedInject constructor(
+class ComicsPagingSource @AssistedInject constructor(
     private val api: MarvelApi,
-) : PagingSource<Int, Hero>() {
+) : PagingSource<Int, Comics>() {
 
-    override fun getRefreshKey(state: PagingState<Int, Hero>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, Comics>): Int? {
         val anchorPosition = state.anchorPosition ?: return null
         val offset = state.closestPageToPosition(anchorPosition) ?: return null
         return offset.prevKey?.plus(NETWORK_PAGE_SIZE) ?: offset.nextKey?.minus(NETWORK_PAGE_SIZE)
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Hero> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Comics> {
 
         val offset = params.key ?: NULL
         val limit = params.loadSize.coerceAtMost(NETWORK_PAGE_SIZE)
-        val response = api.getHeroes(offset, limit)
+        val response = api.getComics(offset, limit)
 
         return if (response.isSuccessful) {
-            val heroes = checkNotNull(response.body()?.data?.results?.map { it.toHero() })
-            val nextKey = if (heroes.size < limit) null else offset + NETWORK_PAGE_SIZE
+            val comics = checkNotNull(response.body()?.data?.results?.map { it.toComics() })
+            val nextKey = if (comics.size < limit) null else offset + NETWORK_PAGE_SIZE
             val prevKey = if (offset == NETWORK_PAGE_SIZE) null else offset - NETWORK_PAGE_SIZE
-            LoadResult.Page(heroes, prevKey, nextKey)
+            LoadResult.Page(comics, prevKey, nextKey)
         } else {
             LoadResult.Error(HttpException(response))
         }
@@ -37,6 +39,6 @@ class HeroesPagingSource @AssistedInject constructor(
 
     @AssistedFactory
     interface Factory {
-        fun create(): HeroesPagingSource
+        fun create(): ComicsPagingSource
     }
 }

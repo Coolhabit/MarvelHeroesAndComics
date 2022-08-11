@@ -1,4 +1,4 @@
-package ru.marvelheroes.data.network.entities
+package ru.marvelheroes.data.network.entities.heroes
 
 import com.google.gson.annotations.SerializedName
 

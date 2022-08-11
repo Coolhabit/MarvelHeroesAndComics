@@ -1,4 +1,4 @@
-package ru.marvelheroes.data.network.entities
+package ru.marvelheroes.data.network.entities.heroes
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,7 +10,7 @@ private const val COPYRIGHT = "copyright"
 private const val ATTR_TEXT = "attributionText"
 private const val ATTR_HTML = "attributionHTML"
 
-data class MarvelApiResponse(
+data class HeroesResponse(
     @SerializedName(CODE)
     val code: String,
     @SerializedName(STATUS)

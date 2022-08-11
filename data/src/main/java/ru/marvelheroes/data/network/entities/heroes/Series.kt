@@ -1,6 +1,6 @@
-package ru.marvelheroes.data.network.entities
+package ru.marvelheroes.data.network.entities.heroes
 
-data class Events(
+data class Series(
     val available: String,
     val collectionURI: String,
     val items: List<Item>,

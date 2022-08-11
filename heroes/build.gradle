@@ -74,6 +74,5 @@ dependencies {
     implementation pagination
 
     implementation project(':baseUI')
-    implementation project(':data')
     implementation project(':domain')
 }
