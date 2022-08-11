@@ -1,5 +1,6 @@
 package ru.marvelheroes.data.mock
 
+import androidx.paging.PagingSource
 import kotlinx.coroutines.delay
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.entities.dto.hero.Hero
@@ -32,7 +33,8 @@ class MockApiService : IHeroesApiService {
 //        )
 //        return result
 //    }
-    override suspend fun loadHeroesList(): List<Hero> {
+    override fun loadHeroesList(): PagingSource<Int, Hero> {
         TODO("Not yet implemented")
     }
+
 }

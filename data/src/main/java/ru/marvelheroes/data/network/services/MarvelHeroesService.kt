@@ -1,19 +1,13 @@
 package ru.marvelheroes.data.network.services
 
+import androidx.paging.PagingSource
 import ru.marvelheroes.core.api.IHeroesApiService
-import ru.marvelheroes.data.network.MarvelApi
+import ru.marvelheroes.data.network.HeroesPagingSource
 import ru.marvelheroes.entities.dto.hero.Hero
 
-class MarvelHeroesService(private val api: MarvelApi) : IHeroesApiService {
+class MarvelHeroesService(private val heroesPagingSourceFactory: HeroesPagingSource.Factory): IHeroesApiService {
 
-    override suspend fun loadHeroesList(): List<Hero> {
-       val result =  api.getHeroes().data.results.map {
-            Hero(
-                heroId = it.id,
-                heroName = it.name,
-                heroPoster = "${it.thumbnail.path}.${it.thumbnail.extension}"
-            )
-        }
-        return result
+    override fun loadHeroesList(): PagingSource<Int, Hero> {
+        return heroesPagingSourceFactory.create()
     }
 }

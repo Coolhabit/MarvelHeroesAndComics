@@ -5,9 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroesBinding
 import ru.coolhabit.marvelheroes.heroes.presentation.adapter.HeroAdapter
@@ -22,11 +28,6 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
 
     @Inject
     lateinit var heroAdapter: HeroAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.loadHeroList()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,13 +56,20 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.load.collect {
-                heroAdapter.submitList(it)
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                heroAdapter.loadStateFlow.collect {
+                    binding.prependProgress.isVisible = it.prepend is LoadState.Loading
+                    binding.appendProgress.isVisible = it.append is LoadState.Loading
+                }
             }
         }
 
-        submitHeroList()
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.loadHeroes.collectLatest {
+                heroAdapter.submitData(it)
+            }
+        }
 
         heroToast()
     }
@@ -70,17 +78,9 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
         heroAdapter.tapHandler = {
             Toast.makeText(
                 context,
-                "Этого героя зовут ${it.heroName}!",
+                "Этого героя зовут ${it?.heroName}!",
                 Toast.LENGTH_SHORT
             ).show()
-        }
-    }
-
-    private fun submitHeroList() {
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.load.collect {
-                heroAdapter.submitList(it)
-            }
         }
     }
 }

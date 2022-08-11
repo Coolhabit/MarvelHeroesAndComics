@@ -7,14 +7,14 @@ import ru.marvelheroes.extensions.load
 
 class HeroViewHolder(
     private val binding: RvHeroItemBinding,
-    private val tapHandler: (Hero) -> Unit,
+    private val tapHandler: (Hero?) -> Unit,
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: Hero) {
+    fun bind(item: Hero?) {
         binding.apply {
-            heroName.text = item.heroName
-            heroPoster.load(item.heroPoster)
+            heroName.text = item?.heroName
+            heroPoster.load(item?.heroPoster)
             heroCard.setOnClickListener {
                 tapHandler.invoke(item)
             }

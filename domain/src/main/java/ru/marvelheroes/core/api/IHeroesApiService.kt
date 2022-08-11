@@ -1,8 +1,9 @@
 package ru.marvelheroes.core.api
 
+import androidx.paging.PagingSource
 import ru.marvelheroes.entities.dto.hero.Hero
 
 interface IHeroesApiService {
 
-    suspend fun loadHeroesList(): List<Hero>
+    fun loadHeroesList(): PagingSource<Int, Hero>
 }

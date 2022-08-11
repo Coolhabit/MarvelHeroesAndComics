@@ -71,6 +71,8 @@ dependencies {
     implementation navigation_fragment_ktx
     implementation navigation_ui_ktx
 
+    implementation pagination
+
     implementation project(':baseUI')
     implementation project(':data')
     implementation project(':domain')

@@ -2,9 +2,13 @@ package ru.coolhabit.marvelheroes.heroes.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.launch
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.usecases.HeroesUseCase
 import javax.inject.Inject
@@ -13,12 +17,12 @@ class HeroesViewModel @Inject constructor(
     private val useCase: HeroesUseCase,
 ) : ViewModel() {
 
-    private val _load = MutableSharedFlow<List<Hero>>()
-    val load = _load.asSharedFlow()
+    private val _loadHeroes: StateFlow<PagingData<Hero>> =
+        Pager(PagingConfig(pageSize = NETWORK_PAGE_SIZE)) {
+            useCase.loadHeroesList()
+        }.flow
+            .stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
 
-    fun loadHeroList() {
-        viewModelScope.launch {
-            _load.emit(useCase.loadHeroesList())
-        }
-    }
+    val loadHeroes: StateFlow<PagingData<Hero>>
+        get() = _loadHeroes
 }

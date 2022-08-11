@@ -88,6 +88,8 @@ dependencies {
     implementation retrofit_gson
     implementation retrofit_log
 
+    implementation pagination
+
     implementation project(":heroes")
     implementation project(":comics")
     implementation project(":myavengers")
