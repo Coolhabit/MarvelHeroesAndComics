@@ -11,6 +11,8 @@
     <dimen name="spacing_30">30dp</dimen>
     <dimen name="spacing_40">40dp</dimen>
 
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_20">20sp</dimen>
     <dimen name="text_24">24sp</dimen>
     <dimen name="text_30">30sp</dimen>
     <dimen name="text_36">36sp</dimen>
