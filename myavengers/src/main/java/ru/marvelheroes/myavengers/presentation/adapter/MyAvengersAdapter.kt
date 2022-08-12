@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ru.marvelheroes.entities.dto.hero.Hero
-import ru.marvelheroes.myavengers.databinding.RvHeroItemBinding
+import ru.marvelheroes.myavengers.databinding.RvAvengersItemBinding
 import javax.inject.Inject
 
 class MyAvengersAdapter @Inject constructor() : ListAdapter<Hero, MyAvengersViewHolder>(MyAvengersDiffUtils()) {
@@ -14,7 +14,7 @@ class MyAvengersAdapter @Inject constructor() : ListAdapter<Hero, MyAvengersView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAvengersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = RvHeroItemBinding.inflate(inflater, parent, false)
+        val binding = RvAvengersItemBinding.inflate(inflater, parent, false)
         return MyAvengersViewHolder(binding, onFavClick)
     }
 

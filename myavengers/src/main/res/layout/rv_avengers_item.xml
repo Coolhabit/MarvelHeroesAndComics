@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/hero_card"
+    android:id="@+id/avengers_card"
     android:layout_width="match_parent"
     android:layout_height="@dimen/size_200"
     android:layout_gravity="center_horizontal"
@@ -10,13 +10,13 @@
     app:cardCornerRadius="@dimen/spacing_20">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/hero_card_layout"
+        android:id="@+id/avengers_card_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/hero_poster"
+            android:id="@+id/avengers_poster"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -25,17 +25,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/favourite_btn"
+            android:id="@+id/remove_btn"
+            android:padding="@dimen/spacing_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_favorite"
-            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_remove"
+            android:background="@drawable/circle_bg"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="@dimen/spacing_12"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/hero_name"
+            android:id="@+id/avengers_name"
             style="@style/HeroNameTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,8 +44,8 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/open_sans"
             android:paddingHorizontal="@dimen/spacing_8"
-            app:layout_constraintBottom_toBottomOf="@id/hero_poster"
-            app:layout_constraintEnd_toEndOf="@id/hero_poster"
+            app:layout_constraintBottom_toBottomOf="@id/avengers_poster"
+            app:layout_constraintEnd_toEndOf="@id/avengers_poster"
             tools:text="Iron Man" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
