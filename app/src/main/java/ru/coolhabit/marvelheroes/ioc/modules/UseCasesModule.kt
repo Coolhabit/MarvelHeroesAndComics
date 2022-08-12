@@ -7,6 +7,7 @@ import ru.marvelheroes.core.api.IDatabaseStorage
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.usecases.ComicsUseCase
 import ru.marvelheroes.usecases.HeroesUseCase
+import ru.marvelheroes.usecases.MyAvengersUseCase
 import javax.inject.Singleton
 
 @Module
@@ -24,4 +25,10 @@ class UseCasesModule {
     fun provideComicsUseCase(
         api: IComicsApiService,
     ) = ComicsUseCase(api)
+
+    @Provides
+    @Singleton
+    fun provideAvengersUseCase(
+        database: IDatabaseStorage,
+    ) = MyAvengersUseCase(database)
 }

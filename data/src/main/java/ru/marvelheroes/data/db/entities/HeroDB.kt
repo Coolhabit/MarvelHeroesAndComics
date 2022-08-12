@@ -23,5 +23,5 @@ fun Hero.toData() = HeroDB(
 fun HeroDB.toDomain() = Hero(
     heroId = dbHeroId,
     heroName = dbHeroName,
-    heroPoster = dbHeroPoster
+    heroPoster = dbHeroPoster,
 )

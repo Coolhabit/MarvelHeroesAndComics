@@ -14,13 +14,17 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/fragment_comics.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/rv_comics_item.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/hero_name_background.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_favorite.xml" value="0.2085" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_favorite_pressed.xml" value="0.2085" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_name_field.xml" value="0.2595" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_trapezoid.xml" value="0.141" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/font/open_sans_family.xml" value="0.2833333333333333" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/fragment_heroes.xml" value="0.2" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_hero_item.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/drawable/hero_name_background.xml" value="0.17" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/fragment_my_avengers.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/rv_hero_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
       </map>
     </option>

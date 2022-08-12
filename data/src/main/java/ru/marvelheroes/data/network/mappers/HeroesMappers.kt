@@ -8,7 +8,7 @@ fun Result.toHero(): Hero {
     return Hero(
         heroId = id,
         heroName = name,
-        heroPoster = thumbnail.toPath()
+        heroPoster = thumbnail.toPath(),
     )
 }
 

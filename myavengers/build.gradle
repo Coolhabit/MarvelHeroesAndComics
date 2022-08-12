@@ -71,7 +71,9 @@ dependencies {
     implementation navigation_fragment_ktx
     implementation navigation_ui_ktx
 
+    implementation glide_core
+    kapt glide_kapt
+
     implementation project(':baseUI')
-    implementation project(':data')
     implementation project(':domain')
 }
