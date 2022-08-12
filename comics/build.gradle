@@ -73,6 +73,9 @@ dependencies {
 
     implementation pagination
 
+    implementation glide_core
+    kapt glide_kapt
+
     implementation project(':baseUI')
     implementation project(':domain')
 }

@@ -9,7 +9,9 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/app/src/main/res/drawable/ic_settings.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/rounded_corners_bg.xml" value="0.1435" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/fragment_comics.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/rv_comics_item.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/hero_name_background.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_name_field.xml" value="0.2595" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_trapezoid.xml" value="0.141" />
