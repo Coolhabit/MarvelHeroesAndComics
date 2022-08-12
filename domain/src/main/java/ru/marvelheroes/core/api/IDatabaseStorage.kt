@@ -1,5 +1,6 @@
 package ru.marvelheroes.core.api
 
+import kotlinx.coroutines.flow.Flow
 import ru.marvelheroes.entities.dto.hero.Hero
 
 interface IDatabaseStorage {
@@ -8,5 +9,5 @@ interface IDatabaseStorage {
 
     suspend fun removeHeroFromFavourite(hero: Hero)
 
-    suspend fun getFavouriteHeroes(): List<Hero>
+    fun getFavouriteHeroes(): Flow<List<Hero>>
 }

@@ -1,9 +1,10 @@
 package ru.marvelheroes.core.api
 
-import androidx.paging.PagingSource
+import androidx.paging.PagingData
+import kotlinx.coroutines.flow.Flow
 import ru.marvelheroes.entities.dto.hero.Hero
 
 interface IHeroesApiService {
 
-    fun loadHeroesList(): PagingSource<Int, Hero>
+    fun loadHeroesList(): Flow<PagingData<Hero>>
 }

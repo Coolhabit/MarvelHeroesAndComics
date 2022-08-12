@@ -1,10 +1,8 @@
 package ru.marvelheroes.myavengers.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.usecases.MyAvengersUseCase
@@ -14,14 +12,16 @@ class MyAvengersViewModel @Inject constructor(
     private val useCase: MyAvengersUseCase,
 ) : ViewModel() {
 
-    private val _loadFavHeroes = MutableSharedFlow<List<Hero>>()
-    val loadFavHeroes = _loadFavHeroes.asSharedFlow()
+//    private val _loadFavHeroes = MutableSharedFlow<List<Hero>>()
+//    val loadFavHeroes = _loadFavHeroes.asSharedFlow()
+//
+//    fun initLoad() {
+//        viewModelScope.launch {
+//            _loadFavHeroes.emit(useCase.getFavouriteHeroes())
+//        }
+//    }
 
-    fun initLoad() {
-        viewModelScope.launch {
-            _loadFavHeroes.emit(useCase.getFavouriteHeroes())
-        }
-    }
+    fun getFavouriteHeroes() = useCase.getFavouriteHeroes().asLiveData()
 
     fun addToFavourite(hero: Hero) {
         viewModelScope.launch {

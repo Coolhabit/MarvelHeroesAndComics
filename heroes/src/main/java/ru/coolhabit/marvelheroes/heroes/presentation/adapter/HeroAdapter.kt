@@ -54,16 +54,15 @@ class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroAdapter.He
 
         fun bind(item: Hero) {
             binding.apply {
-                heroName.text = item?.heroName
-                heroPoster.load(item?.heroPoster)
+                heroName.text = item.heroName
+                heroPoster.load(item.heroPoster)
                 heroCard.setOnClickListener {
                     tapHandler.invoke(item)
                 }
                 favouriteBtn.setOnClickListener {
                     onFavClick.invoke(item)
                 }
-
-                val favHero = favourites.find { it.heroId == item?.heroId }
+                val favHero = favourites.find { it.heroId == item.heroId }
                 if (favHero != null) {
                     favouriteBtn.setImageResource(R.drawable.ic_favorite_pressed)
                 } else {

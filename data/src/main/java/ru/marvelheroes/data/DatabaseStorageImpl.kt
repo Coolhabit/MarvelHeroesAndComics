@@ -2,6 +2,8 @@ package ru.marvelheroes.data
 
 import android.content.Context
 import androidx.room.Room
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import ru.marvelheroes.core.api.IDatabaseStorage
 import ru.marvelheroes.data.db.AppDatabase
 import ru.marvelheroes.data.db.entities.toData
@@ -23,7 +25,7 @@ class DatabaseStorageImpl(context: Context) : IDatabaseStorage {
         database.heroesDao().delete(hero.toData())
     }
 
-    override suspend fun getFavouriteHeroes(): List<Hero> {
-        return database.heroesDao().getFavouriteHeroes().map { it.toDomain() }
+    override fun getFavouriteHeroes(): Flow<List<Hero>> {
+        return database.heroesDao().getFavouriteHeroes().map { list -> list.map { heroDb -> heroDb.toDomain() } }
     }
 }

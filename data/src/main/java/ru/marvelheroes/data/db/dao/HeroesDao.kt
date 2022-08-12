@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 import ru.marvelheroes.data.db.AppDatabase.Companion.DATABASE_NAME
 import ru.marvelheroes.data.db.entities.HeroDB
 
@@ -18,5 +19,5 @@ interface HeroesDao {
     suspend fun delete(hero: HeroDB)
 
     @Query("SELECT * FROM $DATABASE_NAME")
-    suspend fun getFavouriteHeroes(): List<HeroDB>
+    fun getFavouriteHeroes(): Flow<List<HeroDB>>
 }

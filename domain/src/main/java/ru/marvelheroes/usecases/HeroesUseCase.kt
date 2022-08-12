@@ -1,6 +1,7 @@
 package ru.marvelheroes.usecases
 
-import androidx.paging.PagingSource
+import androidx.paging.PagingData
+import kotlinx.coroutines.flow.Flow
 import ru.marvelheroes.core.api.IDatabaseStorage
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.entities.dto.hero.Hero
@@ -10,7 +11,7 @@ class HeroesUseCase @Inject constructor(
     private val api: IHeroesApiService,
     private val database: IDatabaseStorage,
 ) {
-    fun loadHeroesList(): PagingSource<Int, Hero> {
+    fun loadHeroesList(): Flow<PagingData<Hero>> {
         return api.loadHeroesList()
     }
 
@@ -22,9 +23,7 @@ class HeroesUseCase @Inject constructor(
         database.removeHeroFromFavourite(hero)
     }
 
-    suspend fun getFavouriteHeroes(): List<Hero> {
+    fun getFavouriteHeroes(): Flow<List<Hero>> {
         return database.getFavouriteHeroes()
     }
-
-
 }

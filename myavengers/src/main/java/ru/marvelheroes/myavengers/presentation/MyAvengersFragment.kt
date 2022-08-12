@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.flow.collect
 import ru.marvelheroes.myavengers.R
 import ru.marvelheroes.myavengers.databinding.FragmentMyAvengersBinding
 import ru.marvelheroes.myavengers.presentation.adapter.MyAvengersAdapter
@@ -21,11 +19,6 @@ class MyAvengersFragment : BaseFragment(R.layout.fragment_my_avengers) {
 
     @Inject
     lateinit var avengersAdapter: MyAvengersAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.initLoad()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,17 +47,12 @@ class MyAvengersFragment : BaseFragment(R.layout.fragment_my_avengers) {
             )
         }
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.loadFavHeroes.collect {
-                avengersAdapter.submitList(it)
-            }
+        viewModel.getFavouriteHeroes().observe(viewLifecycleOwner) {
+            avengersAdapter.submitList(it)
         }
 
-        avengersAdapter.apply {
-            onFavClick = {
-                viewModel.removeFromFavourite(it)
-                viewModel.initLoad()
-            }
+        avengersAdapter.onFavClick = {
+            viewModel.removeFromFavourite(it)
         }
     }
 }

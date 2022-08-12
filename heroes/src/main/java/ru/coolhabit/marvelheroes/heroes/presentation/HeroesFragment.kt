@@ -72,24 +72,24 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
             }
         }
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewModel.getFavouriteHeroes().observe(viewLifecycleOwner) {
+            heroAdapter.updateFavourites(it)
+        }
+
+        lifecycleScope.launchWhenStarted {
             viewModel.loadHeroes.collectLatest {
                 heroAdapter.submitData(it)
             }
-            heroAdapter.updateFavourites(viewModel.getFavouriteHeroes())
         }
 
         heroAdapter.onFavClick = { hero ->
             val favHero = heroAdapter.favourites.find { it.heroId == hero.heroId }
             if (favHero != null) {
                 viewModel.removeFromFavourite(hero)
-                heroAdapter.notifyDataSetChanged()
             } else {
                 viewModel.addToFavourite(hero)
-                heroAdapter.notifyDataSetChanged()
             }
         }
-
 
         heroToast()
     }
