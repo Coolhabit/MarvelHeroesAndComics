@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import ru.marvelheroes.core.api.IComicsApiService
 import ru.marvelheroes.core.api.IHeroesApiService
+import ru.marvelheroes.data.db.dao.HeroesDao
 import ru.marvelheroes.data.network.paging.ComicsPagingSource
 import ru.marvelheroes.data.network.paging.HeroesPagingSource
 import ru.marvelheroes.data.network.services.MarvelComicsService
