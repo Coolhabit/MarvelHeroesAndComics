@@ -14,15 +14,15 @@ class HeroesUseCase @Inject constructor(
         return api.loadHeroesList()
     }
 
-    fun addHeroToFavourite(hero: Hero) {
+    suspend fun addHeroToFavourite(hero: Hero) {
         database.addHeroToFavourite(hero)
     }
 
-    fun removeHeroFromFavourite(hero: Hero) {
+    suspend fun removeHeroFromFavourite(hero: Hero) {
         database.removeHeroFromFavourite(hero)
     }
 
-    fun getFavouriteHeroes(): List<Hero> {
+    suspend fun getFavouriteHeroes(): List<Hero> {
         return database.getFavouriteHeroes()
     }
 }

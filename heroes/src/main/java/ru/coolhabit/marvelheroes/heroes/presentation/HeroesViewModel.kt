@@ -7,7 +7,9 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.usecases.HeroesUseCase
@@ -25,4 +27,20 @@ class HeroesViewModel @Inject constructor(
 
     val loadHeroes: StateFlow<PagingData<Hero>>
         get() = _loadHeroes
+
+    fun addToFavourite(hero: Hero) {
+        viewModelScope.launch {
+            useCase.addHeroToFavourite(hero)
+        }
+    }
+
+    fun removeFromFavourite(hero: Hero) {
+        viewModelScope.launch {
+            useCase.removeHeroFromFavourite(hero)
+        }
+    }
+
+    suspend fun getFavouriteHeroes(): List<Hero> {
+        return useCase.getFavouriteHeroes()
+    }
 }

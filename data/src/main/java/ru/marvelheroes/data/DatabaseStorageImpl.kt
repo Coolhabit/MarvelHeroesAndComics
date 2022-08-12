@@ -15,15 +15,15 @@ class DatabaseStorageImpl(context: Context) : IDatabaseStorage {
             .databaseBuilder(context, AppDatabase::class.java, AppDatabase.DATABASE_NAME)
             .fallbackToDestructiveMigration().build()
 
-    override fun addHeroToFavourite(hero: Hero) {
+    override suspend fun addHeroToFavourite(hero: Hero) {
         database.heroesDao().insert(hero.toData())
     }
 
-    override fun removeHeroFromFavourite(hero: Hero) {
+    override suspend fun removeHeroFromFavourite(hero: Hero) {
         database.heroesDao().delete(hero.toData())
     }
 
-    override fun getFavouriteHeroes(): List<Hero> {
+    override suspend fun getFavouriteHeroes(): List<Hero> {
         return database.heroesDao().getFavouriteHeroes().map { it.toDomain() }
     }
 }

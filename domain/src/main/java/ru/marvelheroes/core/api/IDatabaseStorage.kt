@@ -4,9 +4,9 @@ import ru.marvelheroes.entities.dto.hero.Hero
 
 interface IDatabaseStorage {
 
-    fun addHeroToFavourite(hero: Hero)
+    suspend fun addHeroToFavourite(hero: Hero)
 
-    fun removeHeroFromFavourite(hero: Hero)
+    suspend fun removeHeroFromFavourite(hero: Hero)
 
-    fun getFavouriteHeroes(): List<Hero>
+    suspend fun getFavouriteHeroes(): List<Hero>
 }

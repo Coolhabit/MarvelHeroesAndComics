@@ -12,11 +12,11 @@ import ru.marvelheroes.data.db.entities.HeroDB
 interface HeroesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(hero: HeroDB)
+    suspend fun insert(hero: HeroDB)
 
     @Delete
-    fun delete(hero: HeroDB)
+    suspend fun delete(hero: HeroDB)
 
     @Query("SELECT * FROM $DATABASE_NAME")
-    fun getFavouriteHeroes(): List<HeroDB>
+    suspend fun getFavouriteHeroes(): List<HeroDB>
 }

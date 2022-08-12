@@ -1,5 +1,6 @@
 package ru.coolhabit.marvelheroes.heroes.presentation.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -12,6 +13,8 @@ import javax.inject.Inject
 class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroViewHolder>(HeroDiffUtils()) {
 
     var tapHandler: (Hero?) -> Unit = {}
+
+    var favourites: List<Hero> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,5 +34,11 @@ class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroViewHolder
         override fun areContentsTheSame(oldItem: Hero, newItem: Hero): Boolean {
             return oldItem == newItem
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateFavourites(favouritesUpdated: List<Hero>) {
+        favourites = favouritesUpdated
+        notifyDataSetChanged()
     }
 }

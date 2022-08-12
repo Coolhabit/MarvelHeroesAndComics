@@ -76,6 +76,8 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
             viewModel.loadHeroes.collectLatest {
                 heroAdapter.submitData(it)
             }
+
+            heroAdapter.updateFavourites(viewModel.getFavouriteHeroes())
         }
 
         heroToast()
