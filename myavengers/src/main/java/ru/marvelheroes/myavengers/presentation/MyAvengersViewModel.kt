@@ -12,15 +12,6 @@ class MyAvengersViewModel @Inject constructor(
     private val useCase: MyAvengersUseCase,
 ) : ViewModel() {
 
-//    private val _loadFavHeroes = MutableSharedFlow<List<Hero>>()
-//    val loadFavHeroes = _loadFavHeroes.asSharedFlow()
-//
-//    fun initLoad() {
-//        viewModelScope.launch {
-//            _loadFavHeroes.emit(useCase.getFavouriteHeroes())
-//        }
-//    }
-
     fun getFavouriteHeroes() = useCase.getFavouriteHeroes().asLiveData()
 
     fun addToFavourite(hero: Hero) {

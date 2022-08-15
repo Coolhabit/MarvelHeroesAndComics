@@ -15,9 +15,7 @@ class HeroesViewModel @Inject constructor(
     private val useCase: HeroesUseCase,
 ) : ViewModel() {
 
-    private val _loadHeroes = useCase.loadHeroesList().cachedIn(viewModelScope)
-    val loadHeroes: Flow<PagingData<Hero>>
-        get() = _loadHeroes
+    val loadHeroes = useCase.loadHeroesList().cachedIn(viewModelScope)
 
     fun getFavouriteHeroes() = useCase.getFavouriteHeroes().asLiveData()
 

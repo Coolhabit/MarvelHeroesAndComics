@@ -17,12 +17,9 @@ class ComicsViewModel @Inject constructor(
     private val useCase: ComicsUseCase,
 ) : ViewModel() {
 
-    private val _loadComics: StateFlow<PagingData<Comics>> =
+    val loadComics: StateFlow<PagingData<Comics>> =
         Pager(PagingConfig(pageSize = NETWORK_PAGE_SIZE)) {
             useCase.loadComicsList()
         }.flow
             .stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
-
-    val loadComics: StateFlow<PagingData<Comics>>
-        get() = _loadComics
 }
