@@ -1,9 +1,11 @@
 package ru.coolhabit.marvelheroes.heroes.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.usecases.HeroesUseCase
@@ -13,12 +15,19 @@ class HeroesViewModel @Inject constructor(
     private val useCase: HeroesUseCase,
 ) : ViewModel() {
 
-    private val _load = MutableSharedFlow<List<Hero>>()
-    val load = _load.asSharedFlow()
+    val loadHeroes = useCase.loadHeroesList().cachedIn(viewModelScope)
 
-    fun loadHeroList() {
+    fun getFavouriteHeroes() = useCase.getFavouriteHeroes().asLiveData()
+
+    fun addToFavourite(hero: Hero) {
         viewModelScope.launch {
-            _load.emit(useCase.loadHeroesList())
+            useCase.addHeroToFavourite(hero)
+        }
+    }
+
+    fun removeFromFavourite(hero: Hero) {
+        viewModelScope.launch {
+            useCase.removeHeroFromFavourite(hero)
         }
     }
 }

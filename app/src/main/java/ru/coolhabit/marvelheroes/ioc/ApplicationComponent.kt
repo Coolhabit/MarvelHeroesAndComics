@@ -10,8 +10,10 @@ import ru.coolhabit.marvelheroes.ioc.modules.ApiModule
 import ru.coolhabit.marvelheroes.ioc.modules.ApplicationModule
 import ru.coolhabit.marvelheroes.ioc.modules.FragmentsModule
 import ru.coolhabit.marvelheroes.ioc.modules.NavigationRoutersModule
+import ru.coolhabit.marvelheroes.ioc.modules.StoragesModule
 import ru.coolhabit.marvelheroes.ioc.modules.UseCasesModule
 import ru.coolhabit.marvelheroes.ioc.modules.ViewModelModule
+import ru.marvelheroes.data.ioc.RemoteModule
 import javax.inject.Singleton
 
 @Singleton
@@ -25,6 +27,8 @@ import javax.inject.Singleton
         UseCasesModule::class,
         NavigationRoutersModule::class,
         ApiModule::class,
+        RemoteModule::class,
+        StoragesModule::class,
     ]
 )
 interface ApplicationComponent : AndroidInjector<MarvelApp> {

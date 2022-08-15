@@ -4,4 +4,9 @@
     android:layout_height="match_parent"
     android:background="@color/marvel_red">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMyAvengers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
