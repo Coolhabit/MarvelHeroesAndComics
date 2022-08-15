@@ -12,7 +12,8 @@ import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.extensions.load
 import javax.inject.Inject
 
-class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroAdapter.HeroViewHolder>(HeroDiffUtils()) {
+class HeroAdapter @Inject constructor() :
+    PagingDataAdapter<Hero, HeroAdapter.HeroViewHolder>(HeroDiffUtils()) {
 
     var tapHandler: (Hero?) -> Unit = {}
     var onFavClick: (Hero) -> Unit = {}
@@ -29,7 +30,7 @@ class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroAdapter.He
         holder.bind(getItem(position)!!)
     }
 
-    class HeroDiffUtils: DiffUtil.ItemCallback<Hero>() {
+    class HeroDiffUtils : DiffUtil.ItemCallback<Hero>() {
         override fun areItemsTheSame(oldItem: Hero, newItem: Hero): Boolean {
             return oldItem.heroId == newItem.heroId
         }
@@ -53,7 +54,7 @@ class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroAdapter.He
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Hero) {
-            binding.apply {
+            with(binding) {
                 heroName.text = item.heroName
                 heroPoster.load(item.heroPoster)
                 heroCard.setOnClickListener {
@@ -62,6 +63,7 @@ class HeroAdapter @Inject constructor() : PagingDataAdapter<Hero, HeroAdapter.He
                 favouriteBtn.setOnClickListener {
                     onFavClick.invoke(item)
                 }
+
                 val favHero = favourites.find { it.heroId == item.heroId }
                 if (favHero != null) {
                     favouriteBtn.setImageResource(R.drawable.ic_favorite_pressed)

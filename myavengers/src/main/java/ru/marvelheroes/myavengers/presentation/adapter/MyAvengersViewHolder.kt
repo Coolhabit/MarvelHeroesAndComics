@@ -12,7 +12,7 @@ class MyAvengersViewHolder(
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Hero) {
-        binding.apply {
+        with(binding) {
             avengersName.text = item.heroName
             avengersPoster.load(item.heroPoster)
             removeBtn.setOnClickListener {

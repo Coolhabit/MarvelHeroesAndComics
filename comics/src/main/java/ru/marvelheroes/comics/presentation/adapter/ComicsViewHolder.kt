@@ -11,7 +11,7 @@ class ComicsViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Comics?) {
-        binding.apply {
+        with(binding) {
             comicsTitle.text = item?.comicsName
             comicsPoster.load(item?.comicsPoster)
             comicsCard.setOnClickListener {
