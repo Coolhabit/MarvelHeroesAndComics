@@ -87,8 +87,7 @@ class ComicsFragment : BaseFragment(R.layout.fragment_comics) {
     private fun comicsToast() {
         comicsAdapter.tapHandler = {
             Toast.makeText(
-                context,
-                "Название комикса - ${it?.comicsName}!",
+                context, requireContext().resources.getString(R.string.comic_toast, it?.comicsName),
                 Toast.LENGTH_SHORT
             ).show()
         }

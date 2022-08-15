@@ -97,8 +97,7 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
     private fun heroToast() {
         heroAdapter.tapHandler = {
             Toast.makeText(
-                context,
-                "Этого героя зовут ${it?.heroName}!",
+                context, requireContext().resources.getString(R.string.hero_toast, it?.heroName),
                 Toast.LENGTH_SHORT
             ).show()
         }
