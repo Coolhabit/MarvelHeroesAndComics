@@ -14,7 +14,7 @@ interface MarvelApi {
     ): Response<HeroesResponse>
 
     @GET("/v1/public/series")
-    suspend fun getComics(
+    suspend fun getSeries(
         @Query("offset") offset: Int,
         @Query("limit") limit: Int
     ): Response<SeriesResponse>

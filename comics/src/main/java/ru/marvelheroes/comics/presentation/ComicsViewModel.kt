@@ -8,7 +8,7 @@ import androidx.paging.PagingData
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
-import ru.marvelheroes.entities.dto.comics.Comics
+import ru.marvelheroes.entities.dto.series.Series
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 import ru.marvelheroes.usecases.ComicsUseCase
 import javax.inject.Inject
@@ -17,7 +17,7 @@ class ComicsViewModel @Inject constructor(
     private val useCase: ComicsUseCase,
 ) : ViewModel() {
 
-    val loadComics: StateFlow<PagingData<Comics>> =
+    val loadSeries: StateFlow<PagingData<Series>> =
         Pager(PagingConfig(pageSize = NETWORK_PAGE_SIZE)) {
             useCase.loadComicsList()
         }.flow

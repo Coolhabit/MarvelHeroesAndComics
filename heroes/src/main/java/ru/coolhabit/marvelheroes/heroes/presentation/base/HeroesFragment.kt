@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation
+package ru.coolhabit.marvelheroes.heroes.presentation.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroesBinding
-import ru.coolhabit.marvelheroes.heroes.presentation.adapter.HeroAdapter
+import ru.coolhabit.marvelheroes.heroes.presentation.base.adapter.HeroAdapter
 import ru.marvelheroes.presentation.adapter.ItemDecoration
 import ru.marvelheroes.presentation.base.BaseFragment
 import javax.inject.Inject

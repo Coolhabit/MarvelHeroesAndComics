@@ -1,4 +1,4 @@
-package ru.marvelheroes.data.network.entities.series
+package ru.marvelheroes.data.network.entities
 
 data class Thumbnail(
     val extension: String,

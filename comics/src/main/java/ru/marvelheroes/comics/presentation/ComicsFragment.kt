@@ -11,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -76,7 +75,7 @@ class ComicsFragment : BaseFragment(R.layout.fragment_comics) {
         }
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.loadComics.collectLatest {
+            viewModel.loadSeries.collectLatest {
                 comicsAdapter.submitData(it)
             }
         }
@@ -87,7 +86,7 @@ class ComicsFragment : BaseFragment(R.layout.fragment_comics) {
     private fun comicsToast() {
         comicsAdapter.tapHandler = {
             Toast.makeText(
-                context, requireContext().resources.getString(R.string.comic_toast, it?.comicsName),
+                context, requireContext().resources.getString(R.string.comic_toast, it?.seriesName),
                 Toast.LENGTH_SHORT
             ).show()
         }

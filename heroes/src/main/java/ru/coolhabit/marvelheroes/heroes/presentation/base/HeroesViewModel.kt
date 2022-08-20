@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation
+package ru.coolhabit.marvelheroes.heroes.presentation.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

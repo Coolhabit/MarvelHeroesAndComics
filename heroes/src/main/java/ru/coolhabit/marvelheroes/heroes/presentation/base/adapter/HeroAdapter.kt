@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.adapter
+package ru.coolhabit.marvelheroes.heroes.presentation.base.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

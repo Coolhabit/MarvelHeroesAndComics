@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import ru.marvelheroes.comics.databinding.RvComicsItemBinding
-import ru.marvelheroes.entities.dto.comics.Comics
+import ru.marvelheroes.entities.dto.series.Series
 import javax.inject.Inject
 
-class ComicsAdapter @Inject constructor() : PagingDataAdapter<Comics, ComicsViewHolder>(ComicsDiffUtils()) {
+class ComicsAdapter @Inject constructor() : PagingDataAdapter<Series, ComicsViewHolder>(ComicsDiffUtils()) {
 
-    var tapHandler: (Comics?) -> Unit ={}
+    var tapHandler: (Series?) -> Unit ={}
 
     override fun onBindViewHolder(holder: ComicsViewHolder, position: Int) {
         holder.bind(getItem(position))
@@ -22,12 +22,12 @@ class ComicsAdapter @Inject constructor() : PagingDataAdapter<Comics, ComicsView
         return ComicsViewHolder(binding, tapHandler)
     }
 
-    class ComicsDiffUtils: DiffUtil.ItemCallback<Comics>() {
-        override fun areItemsTheSame(oldItem: Comics, newItem: Comics): Boolean {
-            return oldItem.comicsId == newItem.comicsId
+    class ComicsDiffUtils: DiffUtil.ItemCallback<Series>() {
+        override fun areItemsTheSame(oldItem: Series, newItem: Series): Boolean {
+            return oldItem.seriesId == newItem.seriesId
         }
 
-        override fun areContentsTheSame(oldItem: Comics, newItem: Comics): Boolean {
+        override fun areContentsTheSame(oldItem: Series, newItem: Series): Boolean {
             return oldItem == newItem
         }
 
