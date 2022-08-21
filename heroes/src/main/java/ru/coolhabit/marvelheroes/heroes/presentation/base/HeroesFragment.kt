@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collect
@@ -17,6 +18,7 @@ import kotlinx.coroutines.launch
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroesBinding
 import ru.coolhabit.marvelheroes.heroes.presentation.base.adapter.HeroAdapter
+import ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsFragment
 import ru.marvelheroes.presentation.adapter.ItemDecoration
 import ru.marvelheroes.presentation.base.BaseFragment
 import javax.inject.Inject
@@ -96,10 +98,8 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
 
     private fun heroToast() {
         heroAdapter.tapHandler = {
-            Toast.makeText(
-                context, requireContext().resources.getString(R.string.hero_toast, it?.heroName),
-                Toast.LENGTH_SHORT
-            ).show()
+            val directions = HeroesFragmentDirections.openHeroDetails(it?.heroId!!)
+            findNavController().navigate(directions)
         }
     }
 }

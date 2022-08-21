@@ -4,7 +4,9 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.data.network.MarvelApi
+import ru.marvelheroes.data.network.mappers.toHeroDetail
 import ru.marvelheroes.data.network.paging.HeroesPagingSource
+import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 
 class MarvelHeroesService(
@@ -15,4 +17,8 @@ class MarvelHeroesService(
         config = PagingConfig(pageSize = NETWORK_PAGE_SIZE),
         pagingSourceFactory = { HeroesPagingSource(api) }
     ).flow
+
+    override suspend fun loadHeroDetail(heroId: String): HeroDetail {
+        return api.getHeroDetails(heroId).data.results.first().toHeroDetail()
+    }
 }
