@@ -19,4 +19,9 @@
         <item name="cornerFamily">rounded</item>
     </style>
 
+    <style name="CorneredImageViewBig">
+        <item name="cornerSizeBottomLeft">@dimen/spacing_20</item>
+        <item name="cornerSizeBottomRight">@dimen/spacing_20</item>
+        <item name="cornerFamily">cut</item>
+    </style>
 </resources>

@@ -19,6 +19,6 @@ class MarvelHeroesService(
     ).flow
 
     override suspend fun loadHeroDetail(heroId: String): HeroDetail {
-        return api.getHeroDetails(heroId).data.results.first().toHeroDetail()
+        return api.getHeroDetails(heroId).data.results.last().toHeroDetail()
     }
 }
