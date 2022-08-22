@@ -29,16 +29,16 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/poster"
-            app:shapeAppearanceOverlay="@style/CorneredImageViewBig"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/spacing_12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread_inside"
-            tools:src="@tools:sample/avatars" />
+        android:id="@+id/poster"
+        app:shapeAppearanceOverlay="@style/CorneredImageViewBig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/spacing_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        tools:src="@tools:sample/avatars" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
