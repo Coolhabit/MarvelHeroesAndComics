@@ -19,5 +19,5 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideComicsApi(pagingFactory: SeriesPagingSource.Factory): IComicsApiService = MarvelComicsService(pagingFactory)
+    fun provideComicsApi(api: MarvelApi): IComicsApiService = MarvelComicsService(api)
 }

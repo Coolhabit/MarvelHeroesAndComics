@@ -2,8 +2,6 @@ package ru.marvelheroes.data.network.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
 import retrofit2.HttpException
 import ru.marvelheroes.data.network.MarvelApi
 import ru.marvelheroes.data.network.mappers.toSeries
@@ -11,7 +9,7 @@ import ru.marvelheroes.entities.dto.series.Series
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 import ru.marvelheroes.extensions.NULL
 
-class SeriesPagingSource @AssistedInject constructor(
+class SeriesPagingSource(
     private val api: MarvelApi,
 ) : PagingSource<Int, Series>() {
 
@@ -35,10 +33,5 @@ class SeriesPagingSource @AssistedInject constructor(
         } else {
             LoadResult.Error(HttpException(response))
         }
-    }
-
-    @AssistedFactory
-    interface Factory {
-        fun create(): SeriesPagingSource
     }
 }

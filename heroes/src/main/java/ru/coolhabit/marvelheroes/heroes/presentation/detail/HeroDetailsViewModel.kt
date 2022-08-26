@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
+import ru.coolhabit.marvelheroes.heroes.presentation.detail.model.HeroDetailSection
+import ru.coolhabit.marvelheroes.heroes.presentation.detail.model.toSection
 import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.usecases.HeroesUseCase
 import javax.inject.Inject
@@ -13,12 +15,12 @@ class HeroDetailsViewModel @Inject constructor(
     private val useCase: HeroesUseCase
 ) : ViewModel() {
 
-    private val _loadDetail = MutableSharedFlow<HeroDetail>()
+    private val _loadDetail = MutableSharedFlow<List<HeroDetailSection>>()
     val loadDetail = _loadDetail.asSharedFlow()
 
     fun initDetail(id: String) {
         viewModelScope.launch {
-            _loadDetail.emit(useCase.loadHeroDetails(id))
+            _loadDetail.emit(useCase.loadHeroDetails(id).toSection())
         }
     }
 }

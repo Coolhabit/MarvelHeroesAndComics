@@ -18,7 +18,9 @@ class MarvelHeroesService(
         pagingSourceFactory = { HeroesPagingSource(api) }
     ).flow
 
-    override suspend fun loadHeroDetail(heroId: String): HeroDetail {
-        return api.getHeroDetails(heroId).data.results.last().toHeroDetail()
+    override suspend fun loadHeroDetail(heroId: String): List<HeroDetail> {
+        return api.getHeroDetails(heroId).data.results.map {
+            it.toHeroDetail()
+        }
     }
 }

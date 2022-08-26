@@ -6,13 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
-import kotlinx.coroutines.flow.collectLatest
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.flow.collect
+import me.ibrahimyilmaz.kiel.adapterOf
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroDetailsBinding
-import ru.marvelheroes.extensions.load
+import ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.herodetail.HeroDetailSectionViewHolder
+import ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.series.SeriesSectionViewHolder
+import ru.marvelheroes.presentation.adapter.IAdapterItemProvider
+import ru.marvelheroes.presentation.adapter.IClickCommand
+import ru.marvelheroes.presentation.adapter.IHeroDetailSection
 import ru.marvelheroes.presentation.base.BaseFragment
 
-class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details) {
+class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
+    IAdapterItemProvider<IHeroDetailSection> {
 
     private val viewModel by viewModels<HeroDetailsViewModel>()
     private lateinit var binding: FragmentHeroDetailsBinding
@@ -22,6 +29,27 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.initDetail(args.heroId)
+    }
+
+    private val compositeAdapter = adapterOf<IHeroDetailSection> {
+        diff(
+            areContentsTheSame = { old, new -> old == new },
+            areItemsTheSame = { old, new -> old === new },
+        )
+        register(
+            layoutResource = HeroDetailSectionViewHolder.ID,
+            viewHolder = ::HeroDetailSectionViewHolder,
+            onViewHolderCreated = { holder ->
+                holder.init(this@HeroDetailsFragment, ::handleCommands)
+            }
+        )
+        register(
+            layoutResource = SeriesSectionViewHolder.ID,
+            viewHolder = ::SeriesSectionViewHolder,
+            onViewHolderCreated = { holder ->
+                holder.init(this@HeroDetailsFragment, ::handleCommands)
+            }
+        )
     }
 
     override fun onCreateView(
@@ -36,18 +64,27 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bindHero()
-    }
+        binding.rvHeroDetails.apply {
+            adapter = compositeAdapter
+            itemAnimator = null
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        }
 
-    private fun bindHero() {
-        lifecycleScope.launchWhenStarted {
-            viewModel.loadDetail.collectLatest {
-                with(binding) {
-                    poster.load(it.hero.heroPoster)
-                    title.text = it.hero.heroName
-                    description.text = it.description
+        viewModel.apply {
+            viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+                loadDetail.collect {
+                    compositeAdapter.submitList(it)
                 }
             }
         }
+    }
+
+    override fun getAdapterItem(position: Int): IHeroDetailSection {
+        return compositeAdapter.currentList[position]
+    }
+
+    private fun handleCommands(command: IClickCommand<*>) {
+
     }
 }

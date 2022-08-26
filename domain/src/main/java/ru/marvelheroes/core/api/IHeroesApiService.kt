@@ -9,5 +9,5 @@ interface IHeroesApiService {
 
     fun loadHeroesList(): Flow<PagingData<Hero>>
 
-    suspend fun loadHeroDetail(heroId: String): HeroDetail
+    suspend fun loadHeroDetail(heroId: String): List<HeroDetail>
 }
