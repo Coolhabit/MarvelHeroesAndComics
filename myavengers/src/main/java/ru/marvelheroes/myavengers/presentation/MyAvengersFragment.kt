@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDeepLinkBuilder
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.marvelheroes.myavengers.R
 import ru.marvelheroes.myavengers.databinding.FragmentMyAvengersBinding
@@ -51,8 +54,11 @@ class MyAvengersFragment : BaseFragment(R.layout.fragment_my_avengers) {
             avengersAdapter.submitList(it)
         }
 
-        avengersAdapter.onFavClick = {
+        avengersAdapter.onDeleteClick = {
             viewModel.removeFromFavourite(it)
+        }
+
+        avengersAdapter.tapHandler = {
         }
     }
 }

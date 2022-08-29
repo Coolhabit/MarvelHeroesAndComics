@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import ru.coolhabit.marvelheroes.heroes.databinding.RvSeriesItemBinding
+import ru.marvelheroes.databinding.RvComicsItemBinding
 import ru.marvelheroes.entities.dto.series.Series
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ class SeriesAdapter @Inject constructor() : ListAdapter<Series, SeriesViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeriesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = RvSeriesItemBinding.inflate(inflater, parent, false)
+        val binding = RvComicsItemBinding.inflate(inflater, parent, false)
         return SeriesViewHolder(binding)
     }
 

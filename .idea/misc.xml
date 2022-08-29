@@ -12,6 +12,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/circle_bg.xml" value="0.147" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/ic_favorite.xml" value="0.1245" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/rounded_corners_bg.xml" value="0.1435" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/layout/rv_comics_item.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/menu/base_toolbar.xml" value="0.253125" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/fragment_comics.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/rv_comics_item.xml" value="0.1" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_section_base.xml" value="0.4" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_section_hero_compilation.xml" value="0.253125" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_section_series.xml" value="0.253125" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_series_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/view_hero_compilation.xml" value="0.253125" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/view_hero_poster.xml" value="0.24923076923076923" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/drawable/hero_name_background.xml" value="0.17" />

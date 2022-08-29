@@ -37,10 +37,10 @@ class SeriesSectionViewHolder(view: View) :
             addItemDecoration(
                 ItemDecoration(
                     context,
-                    R.dimen.size_0,
-                    R.dimen.size_0,
-                    R.dimen.size_0,
-                    R.dimen.size_0
+                    R.dimen.spacing_5,
+                    R.dimen.spacing_5,
+                    R.dimen.spacing_5,
+                    R.dimen.spacing_5
                 )
             )
             adapter = SeriesAdapter().apply {

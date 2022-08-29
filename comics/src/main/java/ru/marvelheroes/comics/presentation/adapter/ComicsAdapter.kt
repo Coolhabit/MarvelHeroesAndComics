@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import ru.marvelheroes.comics.databinding.RvComicsItemBinding
+import ru.marvelheroes.databinding.RvComicsItemBinding
 import ru.marvelheroes.entities.dto.series.Series
 import javax.inject.Inject
 

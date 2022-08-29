@@ -8,6 +8,7 @@ import ru.marvelheroes.myavengers.databinding.RvAvengersItemBinding
 class MyAvengersViewHolder(
     private val binding: RvAvengersItemBinding,
     private val onFavClick: (Hero) -> Unit,
+    private val tapHandler: (Hero) -> Unit,
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
@@ -17,6 +18,9 @@ class MyAvengersViewHolder(
             avengersPoster.load(item.heroPoster)
             removeBtn.setOnClickListener {
                 onFavClick.invoke(item)
+            }
+            avengersCard.setOnClickListener {
+                tapHandler.invoke(item)
             }
         }
     }

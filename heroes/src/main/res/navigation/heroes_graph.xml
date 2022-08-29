@@ -25,5 +25,8 @@
         <argument
             android:name="heroId"
             app:argType="string"/>
+        <deepLink
+            app:uri="@string/deeplink_hero_details">
+        </deepLink>
     </fragment>
 </navigation>

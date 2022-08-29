@@ -5,7 +5,6 @@
     android:id="@+id/comics_card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/spacing_12"
     app:cardBackgroundColor="@color/marvel_red"
     app:cardElevation="@dimen/size_0">
 
@@ -17,7 +16,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/comics_poster"
-            android:layout_width="@dimen/size_200"
+            android:layout_width="@dimen/size_180"
             android:layout_height="@dimen/size_0"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="1:1.2"
@@ -30,15 +29,17 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/comics_title"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_12"
+            android:gravity="center"
+            android:maxLines="@integer/int_2"
             android:textColor="@color/white"
             android:padding="@dimen/spacing_5"
             app:layout_constraintTop_toBottomOf="@id/comics_poster"
             app:layout_constraintStart_toStartOf="@id/comics_poster"
             app:layout_constraintEnd_toEndOf="@id/comics_poster"
-            tools:text="Comics Name"/>
+            tools:text="Comics Name Very Very Long And Little More"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
