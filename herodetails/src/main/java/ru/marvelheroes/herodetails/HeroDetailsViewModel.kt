@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail
+package ru.marvelheroes.herodetails
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.model.HeroDetailSection
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.model.toSection
+import ru.marvelheroes.herodetails.model.HeroDetailSection
+import ru.marvelheroes.herodetails.model.toSection
 import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.usecases.HeroesUseCase
 import java.net.URL

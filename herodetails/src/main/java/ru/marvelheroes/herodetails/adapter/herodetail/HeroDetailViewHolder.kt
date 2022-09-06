@@ -1,9 +1,9 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.herodetail
+package ru.marvelheroes.herodetails.adapter.herodetail
 
 import androidx.recyclerview.widget.RecyclerView
-import ru.coolhabit.marvelheroes.heroes.databinding.ViewHeroCompilationBinding
 import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.extensions.load
+import ru.marvelheroes.herodetails.databinding.ViewHeroCompilationBinding
 
 class HeroDetailViewHolder(private val binding: ViewHeroCompilationBinding) :
     RecyclerView.ViewHolder(binding.root) {

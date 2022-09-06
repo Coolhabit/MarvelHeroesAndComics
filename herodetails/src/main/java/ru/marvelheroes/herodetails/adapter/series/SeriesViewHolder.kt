@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.series
+package ru.marvelheroes.herodetails.adapter.series
 
 import androidx.recyclerview.widget.RecyclerView
 import ru.marvelheroes.databinding.RvComicsItemBinding

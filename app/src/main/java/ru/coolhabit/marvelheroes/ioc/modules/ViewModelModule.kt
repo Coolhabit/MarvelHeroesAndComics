@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import ru.coolhabit.marvelheroes.heroes.presentation.base.HeroesViewModel
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsViewModel
+import ru.marvelheroes.herodetails.HeroDetailsViewModel
 import ru.coolhabit.marvelheroes.ioc.utils.ViewModelFactory
 import ru.coolhabit.marvelheroes.ioc.utils.ViewModelKey
 import ru.coolhabit.marvelheroes.presentation.MainActivityViewModel

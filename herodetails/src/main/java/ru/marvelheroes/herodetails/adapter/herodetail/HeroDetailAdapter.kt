@@ -1,14 +1,16 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.herodetail
+package ru.marvelheroes.herodetails.adapter.herodetail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import ru.coolhabit.marvelheroes.heroes.databinding.ViewHeroCompilationBinding
 import ru.marvelheroes.entities.dto.hero.HeroDetail
+import ru.marvelheroes.herodetails.databinding.ViewHeroCompilationBinding
 import javax.inject.Inject
 
-class HeroDetailAdapter @Inject constructor() : ListAdapter<HeroDetail, HeroDetailViewHolder>(HeroDetailDiffUtils()) {
+class HeroDetailAdapter @Inject constructor() : ListAdapter<HeroDetail, HeroDetailViewHolder>(
+    HeroDetailDiffUtils()
+) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroDetailViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ViewHeroCompilationBinding.inflate(inflater, parent, false)

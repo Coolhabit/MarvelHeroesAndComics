@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail.model
+package ru.marvelheroes.herodetails.model
 
 import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.entities.dto.series.Series

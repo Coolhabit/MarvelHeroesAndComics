@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -18,7 +17,6 @@ import kotlinx.coroutines.launch
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroesBinding
 import ru.coolhabit.marvelheroes.heroes.presentation.base.adapter.HeroAdapter
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsFragment
 import ru.marvelheroes.presentation.adapter.ItemDecoration
 import ru.marvelheroes.presentation.base.BaseFragment
 import javax.inject.Inject

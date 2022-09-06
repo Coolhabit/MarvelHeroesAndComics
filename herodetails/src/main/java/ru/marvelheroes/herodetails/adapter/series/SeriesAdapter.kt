@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.series
+package ru.marvelheroes.herodetails.adapter.series
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

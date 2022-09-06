@@ -1,4 +1,4 @@
-package ru.coolhabit.marvelheroes.heroes.presentation.detail
+package ru.marvelheroes.herodetails
 
 import android.Manifest
 import android.content.ContentValues
@@ -23,10 +23,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.ibrahimyilmaz.kiel.adapterOf
-import ru.coolhabit.marvelheroes.heroes.R
-import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroDetailsBinding
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.herodetail.HeroDetailSectionViewHolder
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.series.SeriesSectionViewHolder
+import ru.marvelheroes.herodetails.adapter.herodetail.HeroDetailSectionViewHolder
+import ru.marvelheroes.herodetails.adapter.series.SeriesSectionViewHolder
+import ru.marvelheroes.herodetails.databinding.FragmentHeroDetailsBinding
 import ru.marvelheroes.presentation.adapter.IAdapterItemProvider
 import ru.marvelheroes.presentation.adapter.IClickCommand
 import ru.marvelheroes.presentation.adapter.IHeroDetailSection

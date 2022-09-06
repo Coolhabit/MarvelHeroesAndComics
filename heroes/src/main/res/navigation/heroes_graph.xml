@@ -11,22 +11,12 @@
         tools:layout="@layout/fragment_heroes">
         <action
             android:id="@+id/open_hero_details"
-            app:destination="@id/fragment_hero_details">
+            app:destination="@id/herodetails_graph">
             <argument
                 android:name="heroId"
-                app:argType="string"/>
+                app:argType="string" />
         </action>
     </fragment>
 
-    <fragment
-        android:id="@+id/fragment_hero_details"
-        android:name="ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsFragment"
-        tools:layout="@layout/fragment_hero_details">
-        <argument
-            android:name="heroId"
-            app:argType="string"/>
-        <deepLink
-            app:uri="@string/deeplink_hero_details">
-        </deepLink>
-    </fragment>
+    <include app:graph="@navigation/herodetails_graph" />
 </navigation>

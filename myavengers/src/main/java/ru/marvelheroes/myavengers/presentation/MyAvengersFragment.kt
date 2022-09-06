@@ -59,6 +59,8 @@ class MyAvengersFragment : BaseFragment(R.layout.fragment_my_avengers) {
         }
 
         avengersAdapter.tapHandler = {
+            val directions = MyAvengersFragmentDirections.openHeroDetails(it.heroId)
+            findNavController().navigate(directions)
         }
     }
 }
