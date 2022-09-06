@@ -16,9 +16,10 @@ class UseCasesModule {
     @Provides
     @Singleton
     fun provideHeroesUseCase(
-        api: IHeroesApiService,
+        heroApi: IHeroesApiService,
+        comicsApi: IComicsApiService,
         database: IDatabaseStorage,
-    ) = HeroesUseCase(api, database)
+    ) = HeroesUseCase(heroApi, comicsApi, database)
 
     @Provides
     @Singleton

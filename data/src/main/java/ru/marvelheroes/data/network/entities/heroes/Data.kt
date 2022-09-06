@@ -5,5 +5,5 @@ data class Data(
     val limit: String,
     val total: String,
     val count: String,
-    val results: List<Result>,
+    val results: List<HeroResult>,
 )

@@ -10,12 +10,13 @@ import javax.inject.Inject
 
 class MyAvengersAdapter @Inject constructor() : ListAdapter<Hero, MyAvengersViewHolder>(MyAvengersDiffUtils()) {
 
-    var onFavClick: (Hero) -> Unit = {}
+    var onDeleteClick: (Hero) -> Unit = {}
+    var tapHandler: (Hero) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAvengersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = RvAvengersItemBinding.inflate(inflater, parent, false)
-        return MyAvengersViewHolder(binding, onFavClick)
+        return MyAvengersViewHolder(binding, onDeleteClick, tapHandler)
     }
 
     override fun onBindViewHolder(holder: MyAvengersViewHolder, position: Int) {

@@ -2,7 +2,11 @@
 <resources>
     <dimen name="spacing_minus_2">-2dp</dimen>
     <dimen name="size_0">0dp</dimen>
+    <dimen name="size_2">2dp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="size_180">180dp</dimen>
     <dimen name="size_200">200dp</dimen>
+    <dimen name="size_300">300dp</dimen>
 
     <dimen name="spacing_2">2dp</dimen>
     <dimen name="spacing_5">5dp</dimen>
@@ -15,6 +19,7 @@
     <dimen name="spacing_40">40dp</dimen>
 
     <dimen name="text_12">12sp</dimen>
+    <dimen name="text_16">16sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_20">20sp</dimen>
     <dimen name="text_24">24sp</dimen>

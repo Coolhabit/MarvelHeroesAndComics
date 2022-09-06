@@ -16,7 +16,16 @@
     <style name="CorneredImageView">
         <item name="cornerSizeBottomLeft">@dimen/spacing_12</item>
         <item name="cornerSizeBottomRight">@dimen/spacing_12</item>
+        <item name="cornerSizeTopLeft">@dimen/spacing_12</item>
+        <item name="cornerSizeTopRight">@dimen/spacing_12</item>
         <item name="cornerFamily">rounded</item>
     </style>
 
+    <style name="CorneredImageViewBig">
+        <item name="cornerSizeTopLeft">@dimen/spacing_20</item>
+        <item name="cornerSizeTopRight">@dimen/spacing_20</item>
+        <item name="cornerSizeBottomLeft">@dimen/spacing_20</item>
+        <item name="cornerSizeBottomRight">@dimen/spacing_20</item>
+        <item name="cornerFamily">cut</item>
+    </style>
 </resources>

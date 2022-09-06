@@ -76,6 +76,8 @@ dependencies {
     implementation glide_core
     kapt glide_kapt
 
+    implementation kiel
+
     implementation project(':baseUI')
     implementation project(':domain')
 }

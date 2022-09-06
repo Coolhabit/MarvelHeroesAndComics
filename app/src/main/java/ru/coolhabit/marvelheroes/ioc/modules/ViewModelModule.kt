@@ -5,7 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import ru.coolhabit.marvelheroes.heroes.presentation.HeroesViewModel
+import ru.coolhabit.marvelheroes.heroes.presentation.base.HeroesViewModel
+import ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsViewModel
 import ru.coolhabit.marvelheroes.ioc.utils.ViewModelFactory
 import ru.coolhabit.marvelheroes.ioc.utils.ViewModelKey
 import ru.coolhabit.marvelheroes.presentation.MainActivityViewModel
@@ -43,4 +44,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SettingsViewModel::class)
     abstract fun settingsViewModel(viewModel: SettingsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HeroDetailsViewModel::class)
+    abstract fun heroDetailsViewModel(viewModel: HeroDetailsViewModel): ViewModel
 }

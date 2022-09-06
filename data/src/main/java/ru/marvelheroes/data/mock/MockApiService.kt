@@ -7,9 +7,6 @@ import kotlinx.coroutines.flow.Flow
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.entities.dto.hero.Hero
 
-class MockApiService : IHeroesApiService {
+class MockApiService {
 
-    override fun loadHeroesList(): Flow<PagingData<Hero>> {
-        TODO("Not yet implemented")
-    }
 }

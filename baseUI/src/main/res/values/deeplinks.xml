@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="deeplink_hero_details">marvelhc://marvelhc/go-to-hero-details/{heroId}</string>
+</resources>
