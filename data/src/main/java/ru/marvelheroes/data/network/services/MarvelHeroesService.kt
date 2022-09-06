@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.data.network.MarvelApi
-import ru.marvelheroes.data.network.mappers.toHeroDetail
+import ru.marvelheroes.data.mappers.toHeroDetail
 import ru.marvelheroes.data.network.paging.HeroesPagingSource
 import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE

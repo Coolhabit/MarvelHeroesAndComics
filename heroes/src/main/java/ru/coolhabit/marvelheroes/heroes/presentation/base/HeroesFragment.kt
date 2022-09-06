@@ -98,7 +98,7 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
 
     private fun heroToast() {
         heroAdapter.tapHandler = {
-            val directions = HeroesFragmentDirections.openHeroDetails(it?.heroId!!)
+            val directions = HeroesFragmentDirections.openHeroDetails(it?.heroId.toString())
             findNavController().navigate(directions)
         }
     }

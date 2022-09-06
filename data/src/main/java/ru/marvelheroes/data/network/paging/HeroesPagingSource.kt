@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import retrofit2.HttpException
 import ru.marvelheroes.data.network.MarvelApi
-import ru.marvelheroes.data.network.mappers.toHero
+import ru.marvelheroes.data.mappers.toHero
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 import ru.marvelheroes.entities.dto.hero.Hero
 import ru.marvelheroes.extensions.NULL

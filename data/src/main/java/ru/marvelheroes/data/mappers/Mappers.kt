@@ -1,10 +1,9 @@
-package ru.marvelheroes.data.network.mappers
+package ru.marvelheroes.data.mappers
 
 import ru.marvelheroes.data.network.entities.Thumbnail
 import ru.marvelheroes.data.network.entities.heroes.HeroResult
 import ru.marvelheroes.data.network.entities.heroes.detail.HeroDetailsResult
 import ru.marvelheroes.data.network.entities.heroes.detail.comics.HeroDetailsComicsResult
-import ru.marvelheroes.data.network.entities.heroes.detail.series.HeroDetailsSeriesResponse
 import ru.marvelheroes.data.network.entities.heroes.detail.series.HeroDetailsSeriesResult
 import ru.marvelheroes.data.network.entities.series.SeriesResult
 import ru.marvelheroes.entities.dto.series.Series

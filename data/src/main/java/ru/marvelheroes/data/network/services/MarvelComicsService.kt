@@ -2,11 +2,10 @@ package ru.marvelheroes.data.network.services
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingSource
 import ru.marvelheroes.core.api.IComicsApiService
 import ru.marvelheroes.data.network.MarvelApi
-import ru.marvelheroes.data.network.mappers.toHeroDetailComics
-import ru.marvelheroes.data.network.mappers.toHeroDetailSeries
+import ru.marvelheroes.data.mappers.toHeroDetailComics
+import ru.marvelheroes.data.mappers.toHeroDetailSeries
 import ru.marvelheroes.data.network.paging.SeriesPagingSource
 import ru.marvelheroes.entities.dto.series.Series
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE

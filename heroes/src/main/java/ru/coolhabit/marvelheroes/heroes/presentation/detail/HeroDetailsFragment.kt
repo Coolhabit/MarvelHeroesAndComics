@@ -27,12 +27,13 @@ import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroDetailsBinding
 import ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.herodetail.HeroDetailSectionViewHolder
 import ru.coolhabit.marvelheroes.heroes.presentation.detail.adapter.series.SeriesSectionViewHolder
-import ru.marvelheroes.extensions.MILLIS
-import ru.marvelheroes.extensions.QUALITY
 import ru.marvelheroes.presentation.adapter.IAdapterItemProvider
 import ru.marvelheroes.presentation.adapter.IClickCommand
 import ru.marvelheroes.presentation.adapter.IHeroDetailSection
 import ru.marvelheroes.presentation.base.BaseFragment
+
+const val MILLIS = 1000
+const val QUALITY = 100
 
 class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
     IAdapterItemProvider<IHeroDetailSection> {
@@ -188,7 +189,7 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
                 contentValues
             )
             //Открываем канал для записи на диск
-            val outputStream = contentResolver.openOutputStream(uri!!)
+            val outputStream = uri?.let { contentResolver.openOutputStream(it) }
             //Передаем нашу картинку, может сделать компрессию
             bitmap.compress(Bitmap.CompressFormat.JPEG, QUALITY, outputStream)
             //Закрываем поток
