@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -29,6 +29,11 @@ class ComicsFragment : BaseFragment(R.layout.fragment_comics) {
 
     @Inject
     lateinit var comicsAdapter: ComicsAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.initContent(null)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,6 +86,24 @@ class ComicsFragment : BaseFragment(R.layout.fragment_comics) {
             }
         }
 
+        binding.searchBlock.apply {
+            searchInput.setOnEditorActionListener { _, actionId, _ ->
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    viewModel.performSearch(searchInput.text.toString())
+                    updateUI()
+                    true
+                } else {
+                    false
+                }
+            }
+
+            searchInputLayout.setEndIconOnClickListener {
+                searchInput.text?.clear()
+                viewModel.initContent(null)
+                updateUI()
+            }
+        }
+
         comicsToast()
     }
 
@@ -88,6 +111,14 @@ class ComicsFragment : BaseFragment(R.layout.fragment_comics) {
         comicsAdapter.tapHandler = {
             val directions = ComicsFragmentDirections.openComicDetails(it?.seriesId!!)
             findNavController().navigate(directions)
+        }
+    }
+
+    private fun updateUI() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.loadSeries.collectLatest {
+                comicsAdapter.submitData(it)
+            }
         }
     }
 }

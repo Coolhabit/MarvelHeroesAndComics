@@ -10,8 +10,8 @@ import javax.inject.Inject
 class ComicsUseCase @Inject constructor(
     private val api: IComicsApiService,
 ) {
-    fun loadComicsList(): Flow<PagingData<Series>> {
-        return api.loadComicsList()
+    fun loadComicsList(query: String?): Flow<PagingData<Series>> {
+        return api.loadComicsList(query)
     }
 
     suspend fun loadComicsDetails(comicId: String): List<ComicDetail> {

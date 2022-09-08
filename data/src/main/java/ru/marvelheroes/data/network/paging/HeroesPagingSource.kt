@@ -11,6 +11,7 @@ import ru.marvelheroes.extensions.NULL
 
 class HeroesPagingSource(
     private val api: MarvelApi,
+    private val query: String?
 ) : PagingSource<Int, Hero>() {
 
     override fun getRefreshKey(state: PagingState<Int, Hero>): Int? {
@@ -23,7 +24,7 @@ class HeroesPagingSource(
 
         val offset = params.key ?: NULL
         val limit = params.loadSize.coerceAtMost(NETWORK_PAGE_SIZE)
-        val response = api.getHeroes(offset, limit)
+        val response = api.getHeroes(offset, limit, query)
 
         return if (response.isSuccessful) {
             val heroes = checkNotNull(response.body()?.data?.results?.map { it.toHero() })

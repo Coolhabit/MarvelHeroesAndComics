@@ -13,9 +13,9 @@ class MarvelHeroesService(
     private val api: MarvelApi,
 ) : IHeroesApiService {
 
-    override fun loadHeroesList() = Pager(
+    override fun loadHeroesList(query: String?) = Pager(
         config = PagingConfig(pageSize = NETWORK_PAGE_SIZE),
-        pagingSourceFactory = { HeroesPagingSource(api) }
+        pagingSourceFactory = { HeroesPagingSource(api, query) }
     ).flow
 
     override suspend fun loadHeroDetail(heroId: String): List<HeroDetail> {

@@ -8,7 +8,7 @@ import ru.marvelheroes.entities.dto.books.Series
 
 interface IComicsApiService {
 
-    fun loadComicsList(): Flow<PagingData<Series>>
+    fun loadComicsList(query: String?): Flow<PagingData<Series>>
 
     suspend fun loadDetailSeriesList(heroId: String): List<Series>
 

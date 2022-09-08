@@ -15,13 +15,15 @@ interface MarvelApi {
     @GET("/v1/public/characters")
     suspend fun getHeroes(
         @Query("offset") offset: Int,
-        @Query("limit") limit: Int
+        @Query("limit") limit: Int,
+        @Query("nameStartsWith") query: String?
     ): Response<HeroesResponse>
 
     @GET("/v1/public/comics")
-    suspend fun getSeries(
+    suspend fun getComics(
         @Query("offset") offset: Int,
-        @Query("limit") limit: Int
+        @Query("limit") limit: Int,
+        @Query("titleStartsWith") query: String?
     ): Response<SeriesResponse>
 
     @GET("/v1/public/characters/{characterId}")

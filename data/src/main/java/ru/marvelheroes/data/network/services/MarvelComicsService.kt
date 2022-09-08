@@ -17,9 +17,9 @@ class MarvelComicsService(
     private val api: MarvelApi,
 ) : IComicsApiService {
 
-    override fun loadComicsList() = Pager(
+    override fun loadComicsList(query: String?) = Pager(
         config = PagingConfig(pageSize = NETWORK_PAGE_SIZE),
-        pagingSourceFactory = { SeriesPagingSource(api) }
+        pagingSourceFactory = { SeriesPagingSource(api, query) }
     ).flow
 
     override suspend fun loadDetailSeriesList(heroId: String): List<Series> {

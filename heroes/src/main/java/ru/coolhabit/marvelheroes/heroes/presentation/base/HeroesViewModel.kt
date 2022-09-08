@@ -15,7 +15,13 @@ class HeroesViewModel @Inject constructor(
     private val useCase: HeroesUseCase,
 ) : ViewModel() {
 
-    val loadHeroes = useCase.loadHeroesList().cachedIn(viewModelScope)
+    lateinit var loadHeroes: Flow<PagingData<Hero>>
+
+    var prevQuery: String? = null
+
+    fun initContent(query: String?) {
+        loadHeroes = useCase.loadHeroesList(query).cachedIn(viewModelScope)
+    }
 
     fun getFavouriteHeroes() = useCase.getFavouriteHeroes().asLiveData()
 
@@ -29,5 +35,14 @@ class HeroesViewModel @Inject constructor(
         viewModelScope.launch {
             useCase.removeHeroFromFavourite(hero)
         }
+    }
+
+    fun performSearch(query: String?) {
+        if (prevQuery == query) {
+            return
+        }
+
+        prevQuery = query
+        initContent(query)
     }
 }
