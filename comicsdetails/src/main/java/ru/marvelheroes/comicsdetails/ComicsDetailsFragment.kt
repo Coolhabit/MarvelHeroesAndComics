@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collect
 import ru.marvelheroes.comicsdetails.adapter.ComicImagesAdapter
 import ru.marvelheroes.comicsdetails.databinding.FragmentComicsDetailsBinding
+import ru.marvelheroes.comicsdetails.notifications.ComicsNotificationHelper
 import ru.marvelheroes.extensions.load
 import ru.marvelheroes.presentation.adapter.ItemDecoration
 import ru.marvelheroes.presentation.base.BaseFragment
@@ -67,6 +68,16 @@ class ComicsDetailsFragment : BaseFragment(R.layout.fragment_comics_details) {
                         description.text = it.comicDescription
                     }
                 }
+            }
+        }
+
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.watch_later -> {
+                    ComicsNotificationHelper.createNotification(requireContext(), viewModel.comicInfo, mainActivity)
+                    true
+                }
+                else -> false
             }
         }
     }

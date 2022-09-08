@@ -31,6 +31,7 @@ import ru.marvelheroes.herodetails.adapter.comics.ComicsSectionViewHolder
 import ru.marvelheroes.herodetails.adapter.herodetail.HeroDetailSectionViewHolder
 import ru.marvelheroes.herodetails.adapter.series.SeriesSectionViewHolder
 import ru.marvelheroes.herodetails.databinding.FragmentHeroDetailsBinding
+import ru.marvelheroes.herodetails.notifications.HeroNotificationHelper
 import ru.marvelheroes.presentation.adapter.IAdapterItemProvider
 import ru.marvelheroes.presentation.adapter.IClickCommand
 import ru.marvelheroes.presentation.adapter.IHeroDetailSection
@@ -109,17 +110,22 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                ru.marvelheroes.R.id.share_hero_info -> {
+                R.id.share_hero_info -> {
                     heroShare()
                     true
                 }
-                ru.marvelheroes.R.id.save_image -> {
+                R.id.save_image -> {
                     saveImage()
+                    true
+                }
+                R.id.watch_later -> {
+                    HeroNotificationHelper.createNotification(requireContext(), viewModel.heroInfo, mainActivity)
                     true
                 }
                 else -> false
             }
         }
+
     }
 
     private fun saveImage() {

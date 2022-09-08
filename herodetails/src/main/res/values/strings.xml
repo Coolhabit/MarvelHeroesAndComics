@@ -8,4 +8,5 @@
     <string name="share_to">Поделиться: </string>
     <string name="image_path">Pictures/MarvelHC</string>
     <string name="image_myme">image/jpeg</string>
+    <string name="watch_later_text">Не забудьте взглянуть!</string>
 </resources>

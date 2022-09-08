@@ -19,6 +19,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/rv_comics_item.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comicsdetails/src/main/res/layout/fragment_comics_details.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comicsdetails/src/main/res/layout/rv_comic_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comicsdetails/src/main/res/menu/base_toolbar.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/fragment_hero_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/rv_section_base.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/rv_section_comics.xml" value="0.11302083333333333" />

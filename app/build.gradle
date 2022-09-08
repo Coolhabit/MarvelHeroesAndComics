@@ -90,6 +90,9 @@ dependencies {
 
     implementation pagination
 
+    implementation glide_core
+    kapt glide_kapt
+
     implementation project(":heroes")
     implementation project(":herodetails")
     implementation project(":comics")
