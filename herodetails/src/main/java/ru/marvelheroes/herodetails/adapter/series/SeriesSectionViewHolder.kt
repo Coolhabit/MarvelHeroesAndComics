@@ -6,6 +6,8 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.marvelheroes.herodetails.R
+import ru.marvelheroes.herodetails.adapter.ComicsCommand
+import ru.marvelheroes.herodetails.adapter.SeriesCommand
 import ru.marvelheroes.herodetails.databinding.RvSectionSeriesBinding
 import ru.marvelheroes.herodetails.model.HeroDetailSection
 import ru.marvelheroes.presentation.adapter.HeroDetailBaseSectionViewHolder
@@ -13,7 +15,7 @@ import ru.marvelheroes.presentation.adapter.IClickCommand
 import ru.marvelheroes.presentation.adapter.ItemDecoration
 
 class SeriesSectionViewHolder(view: View) :
-    HeroDetailBaseSectionViewHolder<HeroDetailSection.ComicsAndSeriesCompilation>(view) {
+    HeroDetailBaseSectionViewHolder<HeroDetailSection.SeriesSection>(view) {
 
     companion object {
         @LayoutRes
@@ -44,12 +46,14 @@ class SeriesSectionViewHolder(view: View) :
                 )
             )
             adapter = SeriesAdapter().apply {
-
+                clickListener = {
+                    callback.invoke(SeriesCommand(it))
+                }
             }
         }
     }
 
-    override fun bind(item: HeroDetailSection.ComicsAndSeriesCompilation) {
-        seriesAdapter.submitList(item.bookList)
+    override fun bind(item: HeroDetailSection.SeriesSection) {
+        seriesAdapter.submitList(item.seriesList)
     }
 }

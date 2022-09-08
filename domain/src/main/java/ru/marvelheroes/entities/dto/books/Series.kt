@@ -1,4 +1,4 @@
-package ru.marvelheroes.entities.dto.series
+package ru.marvelheroes.entities.dto.books
 
 data class Series(
     val seriesId: String,

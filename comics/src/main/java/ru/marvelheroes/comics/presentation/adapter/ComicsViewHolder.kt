@@ -2,7 +2,7 @@ package ru.marvelheroes.comics.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import ru.marvelheroes.databinding.RvComicsItemBinding
-import ru.marvelheroes.entities.dto.series.Series
+import ru.marvelheroes.entities.dto.books.Series
 import ru.marvelheroes.extensions.load
 
 class ComicsViewHolder(

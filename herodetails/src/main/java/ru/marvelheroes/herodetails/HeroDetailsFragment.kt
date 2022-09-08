@@ -11,9 +11,11 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -23,6 +25,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.ibrahimyilmaz.kiel.adapterOf
+import ru.marvelheroes.herodetails.adapter.ComicsCommand
+import ru.marvelheroes.herodetails.adapter.SeriesCommand
+import ru.marvelheroes.herodetails.adapter.comics.ComicsSectionViewHolder
 import ru.marvelheroes.herodetails.adapter.herodetail.HeroDetailSectionViewHolder
 import ru.marvelheroes.herodetails.adapter.series.SeriesSectionViewHolder
 import ru.marvelheroes.herodetails.databinding.FragmentHeroDetailsBinding
@@ -66,6 +71,13 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
                 holder.init(this@HeroDetailsFragment, ::handleCommands)
             }
         )
+        register(
+            layoutResource = ComicsSectionViewHolder.ID,
+            viewHolder = ::ComicsSectionViewHolder,
+            onViewHolderCreated = { holder ->
+                holder.init(this@HeroDetailsFragment, ::handleCommands)
+            }
+        )
     }
 
     override fun onCreateView(
@@ -97,11 +109,11 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.share_hero_info -> {
+                ru.marvelheroes.R.id.share_hero_info -> {
                     heroShare()
                     true
                 }
-                R.id.save_image -> {
+                ru.marvelheroes.R.id.save_image -> {
                     saveImage()
                     true
                 }
@@ -135,7 +147,12 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
         intent.action = Intent.ACTION_SEND
         intent.putExtra(Intent.EXTRA_TEXT, stringShare)
         intent.type = context?.resources?.getString(R.string.intent_type_text)
-        startActivity(Intent.createChooser(intent, context?.resources?.getString(R.string.share_to)))
+        startActivity(
+            Intent.createChooser(
+                intent,
+                context?.resources?.getString(R.string.share_to)
+            )
+        )
     }
 
     override fun getAdapterItem(position: Int): IHeroDetailSection {
@@ -143,6 +160,10 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
     }
 
     private fun handleCommands(command: IClickCommand<*>) {
+        when (command) {
+            is ComicsCommand -> navigateToComicsDetails(command.payload.comicsId)
+            is SeriesCommand -> Toast.makeText(context, "Not quite a comics", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun checkPermission(): Boolean {
@@ -173,13 +194,19 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
                     MediaStore.Images.Media.DISPLAY_NAME,
                     viewModel.heroInfo?.heroName
                 )
-                put(MediaStore.Images.Media.MIME_TYPE, context?.resources?.getString(R.string.image_myme))
+                put(
+                    MediaStore.Images.Media.MIME_TYPE,
+                    context?.resources?.getString(R.string.image_myme)
+                )
                 put(
                     MediaStore.Images.Media.DATE_ADDED,
                     System.currentTimeMillis() / MILLIS
                 )
                 put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis())
-                put(MediaStore.Images.Media.RELATIVE_PATH, context?.resources?.getString(R.string.image_path))
+                put(
+                    MediaStore.Images.Media.RELATIVE_PATH,
+                    context?.resources?.getString(R.string.image_path)
+                )
             }
             //Получаем ссылку на объект Content resolver, который помогает передавать информацию из приложения вовне
             val contentResolver = requireActivity().contentResolver
@@ -219,5 +246,10 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
                 startActivity(intent)
             }
             .show()
+    }
+
+    private fun navigateToComicsDetails(comicId: String) {
+        val directions = HeroDetailsFragmentDirections.openComicsDetails(comicId)
+        findNavController().navigate(directions)
     }
 }

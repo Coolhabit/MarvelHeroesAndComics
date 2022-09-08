@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ru.marvelheroes.databinding.RvComicsItemBinding
-import ru.marvelheroes.entities.dto.series.Series
+import ru.marvelheroes.entities.dto.books.Series
 import javax.inject.Inject
 
 class SeriesAdapter @Inject constructor() : ListAdapter<Series, SeriesViewHolder>(SeriesDiffUtils()) {
+
+    var clickListener: (Series) -> Unit = {}
 
     override fun onBindViewHolder(holder: SeriesViewHolder, position: Int) {
         holder.bind(getItem(position))
@@ -17,7 +19,9 @@ class SeriesAdapter @Inject constructor() : ListAdapter<Series, SeriesViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeriesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = RvComicsItemBinding.inflate(inflater, parent, false)
-        return SeriesViewHolder(binding)
+        return SeriesViewHolder(binding) { pos ->
+            clickListener(getItem(pos))
+        }
     }
 
     class SeriesDiffUtils: DiffUtil.ItemCallback<Series>() {

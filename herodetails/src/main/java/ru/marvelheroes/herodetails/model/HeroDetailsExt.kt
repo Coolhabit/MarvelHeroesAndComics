@@ -10,15 +10,15 @@ fun HeroDetailData.toSection(): List<HeroDetailSection> = mutableListOf<HeroDeta
         )
     )
     add(
-        HeroDetailSection.ComicsAndSeriesCompilation(
+        HeroDetailSection.SeriesSection(
             sectionName = "Series",
-            bookList = seriesList,
+            seriesList = seriesList,
         )
     )
     add(
-        HeroDetailSection.ComicsAndSeriesCompilation(
+        HeroDetailSection.ComicsSection(
             sectionName = "Comics",
-            bookList = comicsList,
+            comicsList = comicsList,
         )
     )
 }

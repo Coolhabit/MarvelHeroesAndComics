@@ -1,7 +1,8 @@
 package ru.marvelheroes.herodetails.model
 
+import ru.marvelheroes.entities.dto.books.Comics
+import ru.marvelheroes.entities.dto.books.Series
 import ru.marvelheroes.entities.dto.hero.HeroDetail
-import ru.marvelheroes.entities.dto.series.Series
 import ru.marvelheroes.presentation.adapter.IHeroDetailSection
 
 sealed class HeroDetailSection(
@@ -30,24 +31,46 @@ sealed class HeroDetailSection(
         }
     }
 
-    class ComicsAndSeriesCompilation(
+    class ComicsSection(
         sectionName: String,
-        var bookList: List<Series>
+        var comicsList: List<Comics>
     ) : HeroDetailSection(sectionName) {
 
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
-            if (other !is ComicsAndSeriesCompilation) return false
+            if (other !is ComicsSection) return false
             if (!super.equals(other)) return false
 
-            if (bookList != other.bookList) return false
+            if (comicsList != other.comicsList) return false
 
             return true
         }
 
         override fun hashCode(): Int {
             var result = super.hashCode()
-            result = 31 * result + bookList.hashCode()
+            result = 31 * result + comicsList.hashCode()
+            return result
+        }
+    }
+
+    class SeriesSection(
+        sectionName: String,
+        var seriesList: List<Series>
+    ) : HeroDetailSection(sectionName) {
+
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (other !is SeriesSection) return false
+            if (!super.equals(other)) return false
+
+            if (seriesList != other.seriesList) return false
+
+            return true
+        }
+
+        override fun hashCode(): Int {
+            var result = super.hashCode()
+            result = 31 * result + seriesList.hashCode()
             return result
         }
     }

@@ -4,6 +4,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import ru.marvelheroes.data.network.entities.comics.detail.ComicDetailsResponse
 import ru.marvelheroes.data.network.entities.heroes.HeroesResponse
 import ru.marvelheroes.data.network.entities.heroes.detail.HeroDetailsResponse
 import ru.marvelheroes.data.network.entities.heroes.detail.comics.HeroDetailsComicsResponse
@@ -17,7 +18,7 @@ interface MarvelApi {
         @Query("limit") limit: Int
     ): Response<HeroesResponse>
 
-    @GET("/v1/public/series")
+    @GET("/v1/public/comics")
     suspend fun getSeries(
         @Query("offset") offset: Int,
         @Query("limit") limit: Int
@@ -37,4 +38,9 @@ interface MarvelApi {
     suspend fun getSeriesByHeroId(
         @Path("characterId") characterId: String,
     ): HeroDetailsSeriesResponse
+
+    @GET("/v1/public/comics/{comicId}")
+    suspend fun getComicDetails(
+        @Path("comicId") comicId: String,
+    ): ComicDetailsResponse
 }

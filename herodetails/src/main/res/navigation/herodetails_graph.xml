@@ -11,9 +11,16 @@
         tools:layout="@layout/fragment_hero_details">
         <argument
             android:name="heroId"
-            app:argType="string"/>
-        <deepLink
-            app:uri="@string/deeplink_hero_details">
-        </deepLink>
+            app:argType="string" />
+        <deepLink app:uri="@string/deeplink_hero_details"></deepLink>
+        <action
+            android:id="@+id/open_comics_details"
+            app:destination="@id/comicsdetails_graph">
+            <argument
+                android:name="comicId"
+                app:argType="string" />
+        </action>
     </fragment>
+
+    <include app:graph="@navigation/comicsdetails_graph" />
 </navigation>

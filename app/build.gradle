@@ -93,6 +93,7 @@ dependencies {
     implementation project(":heroes")
     implementation project(":herodetails")
     implementation project(":comics")
+    implementation project(":comicsdetails")
     implementation project(":myavengers")
     implementation project(":settings")
     implementation project(':baseUI')

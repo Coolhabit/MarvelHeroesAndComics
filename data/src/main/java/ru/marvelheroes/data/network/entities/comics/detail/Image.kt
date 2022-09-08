@@ -1,4 +1,4 @@
-package ru.marvelheroes.data.network.entities.heroes.detail.comics
+package ru.marvelheroes.data.network.entities.comics.detail
 
 data class Image(
     val extension: String,

@@ -6,7 +6,6 @@ import ru.marvelheroes.core.api.IComicsApiService
 import ru.marvelheroes.core.api.IDatabaseStorage
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.entities.dto.hero.Hero
-import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.entities.dto.hero.HeroDetailData
 import javax.inject.Inject
 
