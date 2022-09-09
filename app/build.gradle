@@ -94,6 +94,7 @@ dependencies {
     kapt glide_kapt
 
     implementation data_store
+    implementation data_store_core
 
     implementation project(":heroes")
     implementation project(":herodetails")

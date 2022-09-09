@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="day_night_text">Change DAY/NIGHT mode</string>
+    <string name="terms_of_use_text">Marvel API terms of use</string>
+    <string name="marvel_shop_text">Marvel Shop</string>
+    <string name="terms_link">https://developer.marvel.com/terms</string>
+    <string name="shop_link">https://www.shopdisney.com/marvel-content/?CMP=SYN-MARVELCOM:NAV_MORE</string>
+    <string name="credits">Marvel Heroes &amp; Comics. 2022</string>
 </resources>

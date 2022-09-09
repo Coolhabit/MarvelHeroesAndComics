@@ -50,8 +50,9 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/fragment_my_avengers.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/rv_avengers_item.xml" value="0.264" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/rv_hero_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/fragment_settings.xml" value="0.1" />
-        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/view_day_night_switch.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/fragment_settings.xml" value="0.264" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/view_day_night_switch.xml" value="0.4" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/view_wev_content.xml" value="0.16" />
       </map>
     </option>
   </component>
