@@ -93,6 +93,8 @@ dependencies {
     implementation glide_core
     kapt glide_kapt
 
+    implementation data_store
+
     implementation project(":heroes")
     implementation project(":herodetails")
     implementation project(":comics")

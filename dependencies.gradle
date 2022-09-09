@@ -17,6 +17,7 @@ ext {
     def glideVersion = "4.12.0"
 
     def jodaV = "2.10.14"
+    def dataStoreV = "1.0.0"
 
     def swipe_to_refresh_vers = "1.1.0"
     def metadata_jvm_vers = "0.3.0"
@@ -107,4 +108,8 @@ ext {
 
     //kiel
     kiel = "io.github.ibrahimyilmaz:kiel:$kiel_vers"
+
+    // data store
+    data_store = "androidx.datastore:datastore-preferences:$dataStoreV"
+    data_store_core = "androidx.datastore:datastore-preferences-core:$dataStoreV"
 }

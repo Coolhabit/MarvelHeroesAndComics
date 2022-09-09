@@ -5,15 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/marvel_red">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/theme_switch_btn"
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/day_night_switch_block"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/spacing_16"
         app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/white"
-        android:text="DAY / NIGHT"/>
+        app:layout_constraintStart_toStartOf="parent"
+        layout="@layout/view_day_night_switch"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

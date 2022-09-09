@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import ru.marvelheroes.presentation.base.BaseFragment
 import ru.marvelheroes.settings.R
 import ru.marvelheroes.settings.databinding.FragmentSettingsBinding
@@ -26,7 +28,14 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.themeSwitchBtn.setOnCheckedChangeListener { _, isChecked ->
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            binding.dayNightSwitchBlock.themeSwitchBtn.isChecked = viewModel.getDayNightCheck()
+        }
+
+        binding.dayNightSwitchBlock.themeSwitchBtn.setOnCheckedChangeListener { _, isChecked ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.saveDayNightCheck(isChecked)
+            }
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             } else {
