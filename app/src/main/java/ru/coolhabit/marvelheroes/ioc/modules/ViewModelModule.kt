@@ -6,11 +6,12 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import ru.coolhabit.marvelheroes.heroes.presentation.base.HeroesViewModel
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsViewModel
+import ru.marvelheroes.herodetails.HeroDetailsViewModel
 import ru.coolhabit.marvelheroes.ioc.utils.ViewModelFactory
 import ru.coolhabit.marvelheroes.ioc.utils.ViewModelKey
 import ru.coolhabit.marvelheroes.presentation.MainActivityViewModel
 import ru.marvelheroes.comics.presentation.ComicsViewModel
+import ru.marvelheroes.comicsdetails.ComicsDetailsViewModel
 import ru.marvelheroes.myavengers.presentation.MyAvengersViewModel
 import ru.marvelheroes.settings.presentation.SettingsViewModel
 
@@ -49,4 +50,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HeroDetailsViewModel::class)
     abstract fun heroDetailsViewModel(viewModel: HeroDetailsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ComicsDetailsViewModel::class)
+    abstract fun comicDetailsViewModel(viewModel: ComicsDetailsViewModel): ViewModel
 }

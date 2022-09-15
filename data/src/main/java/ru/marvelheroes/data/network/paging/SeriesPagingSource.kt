@@ -5,12 +5,13 @@ import androidx.paging.PagingState
 import retrofit2.HttpException
 import ru.marvelheroes.data.network.MarvelApi
 import ru.marvelheroes.data.mappers.toSeries
-import ru.marvelheroes.entities.dto.series.Series
+import ru.marvelheroes.entities.dto.books.Series
 import ru.marvelheroes.extensions.NETWORK_PAGE_SIZE
 import ru.marvelheroes.extensions.NULL
 
 class SeriesPagingSource(
     private val api: MarvelApi,
+    private val query: String?
 ) : PagingSource<Int, Series>() {
 
     override fun getRefreshKey(state: PagingState<Int, Series>): Int? {
@@ -23,7 +24,7 @@ class SeriesPagingSource(
 
         val offset = params.key ?: NULL
         val limit = params.loadSize.coerceAtMost(NETWORK_PAGE_SIZE)
-        val response = api.getSeries(offset, limit)
+        val response = api.getComics(offset, limit, query)
 
         return if (response.isSuccessful) {
             val series = checkNotNull(response.body()?.data?.results?.map { it.toSeries() })

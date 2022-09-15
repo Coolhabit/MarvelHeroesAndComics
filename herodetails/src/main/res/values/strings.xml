@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hero_toast">Этого героя зовут %1$s!</string>
+    <string name="intent_type_text">text/plain</string>
+    <string name="intent_type_image">image/*</string>
+    <string name="downloaded_to_gallery">"Сохранено в галерею"</string>
+    <string name="open">В галерею</string>
+    <string name="share_to">Поделиться: </string>
+    <string name="image_path">Pictures/MarvelHC</string>
+    <string name="image_myme">image/jpeg</string>
+    <string name="watch_later_text">Не забудьте взглянуть!</string>
+</resources>

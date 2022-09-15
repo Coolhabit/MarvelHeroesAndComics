@@ -6,7 +6,6 @@ import ru.marvelheroes.core.api.IComicsApiService
 import ru.marvelheroes.core.api.IDatabaseStorage
 import ru.marvelheroes.core.api.IHeroesApiService
 import ru.marvelheroes.entities.dto.hero.Hero
-import ru.marvelheroes.entities.dto.hero.HeroDetail
 import ru.marvelheroes.entities.dto.hero.HeroDetailData
 import javax.inject.Inject
 
@@ -15,8 +14,8 @@ class HeroesUseCase @Inject constructor(
     private val comicsService: IComicsApiService,
     private val database: IDatabaseStorage,
 ) {
-    fun loadHeroesList(): Flow<PagingData<Hero>> {
-        return heroService.loadHeroesList()
+    fun loadHeroesList(query: String?): Flow<PagingData<Hero>> {
+        return heroService.loadHeroesList(query)
     }
 
     suspend fun loadHeroDetails(heroId: String): HeroDetailData {

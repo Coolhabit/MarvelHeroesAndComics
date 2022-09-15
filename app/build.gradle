@@ -90,8 +90,16 @@ dependencies {
 
     implementation pagination
 
+    implementation glide_core
+    kapt glide_kapt
+
+    implementation data_store
+    implementation data_store_core
+
     implementation project(":heroes")
+    implementation project(":herodetails")
     implementation project(":comics")
+    implementation project(":comicsdetails")
     implementation project(":myavengers")
     implementation project(":settings")
     implementation project(':baseUI')

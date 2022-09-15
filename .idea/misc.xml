@@ -12,10 +12,22 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/circle_bg.xml" value="0.147" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/ic_favorite.xml" value="0.1245" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/drawable/rounded_corners_bg.xml" value="0.1435" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/font/open_sans_family.xml" value="0.2212962962962963" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/layout/rv_comics_item.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/layout/vies_search_block.xml" value="0.2" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/baseUI/src/main/res/menu/base_toolbar.xml" value="0.253125" />
-        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/fragment_comics.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/fragment_comics.xml" value="0.152" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comics/src/main/res/layout/rv_comics_item.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comicsdetails/src/main/res/layout/fragment_comics_details.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comicsdetails/src/main/res/layout/rv_comic_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/comicsdetails/src/main/res/menu/base_toolbar.xml" value="0.1" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/fragment_hero_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/rv_section_base.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/rv_section_comics.xml" value="0.11302083333333333" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/rv_section_hero_compilation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/rv_section_series.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/layout/view_hero_compilation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/herodetails/src/main/res/menu/base_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/hero_name_background.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_favorite.xml" value="0.2085" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/drawable/ic_favorite_pressed.xml" value="0.2085" />
@@ -26,7 +38,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/fragment_heroes.xml" value="0.2" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_comics_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_hero_item.xml" value="0.264" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_hero_item.xml" value="0.1" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_section_base.xml" value="0.4" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_section_hero_compilation.xml" value="0.253125" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/heroes/src/main/res/layout/rv_section_series.xml" value="0.253125" />
@@ -38,7 +50,9 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/fragment_my_avengers.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/rv_avengers_item.xml" value="0.264" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/myavengers/src/main/res/layout/rv_hero_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/fragment_settings.xml" value="0.264" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/view_day_night_switch.xml" value="0.4" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/MarvelHeroesAndComics/settings/src/main/res/layout/view_wev_content.xml" value="0.16" />
       </map>
     </option>
   </component>

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import ru.marvelheroes.databinding.RvComicsItemBinding
-import ru.marvelheroes.entities.dto.series.Series
+import ru.marvelheroes.entities.dto.books.Series
 import javax.inject.Inject
 
 class ComicsAdapter @Inject constructor() : PagingDataAdapter<Series, ComicsViewHolder>(ComicsDiffUtils()) {

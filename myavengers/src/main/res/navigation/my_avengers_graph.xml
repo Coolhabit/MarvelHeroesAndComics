@@ -9,5 +9,14 @@
         android:id="@+id/fragment_my_avengers"
         android:name="ru.marvelheroes.myavengers.presentation.MyAvengersFragment"
         tools:layout="@layout/fragment_my_avengers">
+        <action
+            android:id="@+id/open_hero_details"
+            app:destination="@id/herodetails_graph">
+            <argument
+                android:name="heroId"
+                app:argType="string" />
+        </action>
     </fragment>
+
+    <include app:graph="@navigation/herodetails_graph" />
 </navigation>

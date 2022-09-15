@@ -7,7 +7,7 @@ import ru.marvelheroes.entities.dto.hero.HeroDetail
 
 interface IHeroesApiService {
 
-    fun loadHeroesList(): Flow<PagingData<Hero>>
+    fun loadHeroesList(query: String?): Flow<PagingData<Hero>>
 
     suspend fun loadHeroDetail(heroId: String): List<HeroDetail>
 }

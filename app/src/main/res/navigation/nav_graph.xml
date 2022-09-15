@@ -6,6 +6,7 @@
     app:startDestination="@+id/heroes_graph">
 
     <include app:graph="@navigation/heroes_graph" />
+    <include app:graph="@navigation/herodetails_graph" />
     <include app:graph="@navigation/comics_graph" />
     <include app:graph="@navigation/my_avengers_graph"/>
     <include app:graph="@navigation/settings_graph"/>

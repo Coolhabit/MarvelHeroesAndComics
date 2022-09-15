@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -18,7 +18,6 @@ import kotlinx.coroutines.launch
 import ru.coolhabit.marvelheroes.heroes.R
 import ru.coolhabit.marvelheroes.heroes.databinding.FragmentHeroesBinding
 import ru.coolhabit.marvelheroes.heroes.presentation.base.adapter.HeroAdapter
-import ru.coolhabit.marvelheroes.heroes.presentation.detail.HeroDetailsFragment
 import ru.marvelheroes.presentation.adapter.ItemDecoration
 import ru.marvelheroes.presentation.base.BaseFragment
 import javax.inject.Inject
@@ -30,6 +29,11 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
 
     @Inject
     lateinit var heroAdapter: HeroAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.initContent(null)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -93,6 +97,24 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
             }
         }
 
+        binding.searchBlock.apply {
+            searchInput.setOnEditorActionListener { _, actionId, _ ->
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    viewModel.performSearch(searchInput.text.toString())
+                    updateUI()
+                    true
+                } else {
+                    false
+                }
+            }
+
+            searchInputLayout.setEndIconOnClickListener {
+                searchInput.text?.clear()
+                viewModel.initContent(null)
+                updateUI()
+            }
+        }
+
         heroToast()
     }
 
@@ -100,6 +122,14 @@ class HeroesFragment : BaseFragment(R.layout.fragment_heroes) {
         heroAdapter.tapHandler = {
             val directions = HeroesFragmentDirections.openHeroDetails(it?.heroId.toString())
             findNavController().navigate(directions)
+        }
+    }
+
+    private fun updateUI() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.loadHeroes.collectLatest {
+                heroAdapter.submitData(it)
+            }
         }
     }
 }
