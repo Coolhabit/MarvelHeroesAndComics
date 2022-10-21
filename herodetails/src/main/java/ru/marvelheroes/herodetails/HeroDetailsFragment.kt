@@ -108,6 +108,10 @@ class HeroDetailsFragment : BaseFragment(R.layout.fragment_hero_details),
             }
         }
 
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.share_hero_info -> {

@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collect
@@ -69,6 +71,10 @@ class ComicsDetailsFragment : BaseFragment(R.layout.fragment_comics_details) {
                     }
                 }
             }
+        }
+
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
         }
 
         binding.toolbar.setOnMenuItemClickListener {

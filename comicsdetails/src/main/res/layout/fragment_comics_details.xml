@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:elevation="@dimen/size_0">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -32,19 +32,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/comic_poster"
                 android:layout_width="@dimen/size_300"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_20"
+                android:layout_height="@dimen/size_0"
                 android:padding="@dimen/size_2"
+                android:layout_marginTop="70dp"
                 app:layout_constraintDimensionRatio="1:1.5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="@color/black"
-                app:strokeWidth="@dimen/size_4"
+                app:strokeWidth="@dimen/size_2"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatTextView
