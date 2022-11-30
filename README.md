@@ -1,7 +1,7 @@
 # MarvelHeroesAndComics
 Marvel Heroes and Comics app based on https://developer.marvel.com/
 
-Technology stack: Kotlin, MVVM, Retrofit, Dagger2, Room, Coroutines, SharedFlow, Paging3
+Technology stack: Kotlin, MVVM, Retrofit, Dagger2, Room, Coroutines, SharedFlow, Paging3, kiel
   <p>
   <img src="https://user-images.githubusercontent.com/82819729/188836279-6c83ceee-f27d-4fd3-818f-5ce70368fb67.jpg" width=30% height=30%>
   <img src="https://user-images.githubusercontent.com/82819729/188836300-e7f0c618-d867-417a-938a-99cc2b31e23d.jpg" width=30% height=30%>
