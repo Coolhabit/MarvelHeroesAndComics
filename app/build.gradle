@@ -81,4 +81,28 @@ dependencies {
     // navigation
     implementation navigation_fragment_ktx
     implementation navigation_ui_ktx
+
+    implementation okhttp
+
+    implementation retrofit
+    implementation retrofit_gson
+    implementation retrofit_log
+
+    implementation pagination
+
+    implementation glide_core
+    kapt glide_kapt
+
+    implementation data_store
+    implementation data_store_core
+
+    implementation project(":heroes")
+    implementation project(":herodetails")
+    implementation project(":comics")
+    implementation project(":comicsdetails")
+    implementation project(":myavengers")
+    implementation project(":settings")
+    implementation project(':baseUI')
+    implementation project(':data')
+    implementation project(':domain')
 }

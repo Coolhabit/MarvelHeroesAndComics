@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/watch_later"
+        android:enabled="true"
+        android:icon="@drawable/ic_watch_later"
+        android:title="@string/watch_later"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/save_image"
+        android:enabled="true"
+        android:icon="@drawable/ic_save"
+        android:title="@string/save_pic"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/share_hero_info"
+        android:enabled="true"
+        android:icon="@drawable/ic_share"
+        android:title="@string/share"
+        app:showAsAction="ifRoom" />
+</menu>

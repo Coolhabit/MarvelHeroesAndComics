@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comics_graph"
+    app:startDestination="@id/fragment_comic">
+
+    <fragment
+        android:id="@+id/fragment_comic"
+        android:name="ru.marvelheroes.comics.presentation.ComicsFragment"
+        tools:layout="@layout/fragment_comics">
+        <action
+            android:id="@+id/open_comic_details"
+            app:destination="@id/comicsdetails_graph">
+            <argument
+                android:name="comicId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/comicsdetails_graph" />
+</navigation>

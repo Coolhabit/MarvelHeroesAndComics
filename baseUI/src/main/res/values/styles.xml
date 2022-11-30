@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="HeroNameTextStyle">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:maxLines">@integer/int_1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="CorneredImageView">
+        <item name="cornerSizeBottomLeft">@dimen/spacing_12</item>
+        <item name="cornerSizeBottomRight">@dimen/spacing_12</item>
+        <item name="cornerSizeTopLeft">@dimen/spacing_12</item>
+        <item name="cornerSizeTopRight">@dimen/spacing_12</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="CorneredImageViewBig">
+        <item name="cornerSizeTopLeft">@dimen/spacing_20</item>
+        <item name="cornerSizeTopRight">@dimen/spacing_20</item>
+        <item name="cornerSizeBottomLeft">@dimen/spacing_20</item>
+        <item name="cornerSizeBottomRight">@dimen/spacing_20</item>
+        <item name="cornerFamily">cut</item>
+    </style>
+</resources>
