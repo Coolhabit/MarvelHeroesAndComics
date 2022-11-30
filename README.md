@@ -10,3 +10,13 @@ Technology stack: Kotlin, MVVM, Retrofit, Dagger2, Room, Coroutines, SharedFlow,
     <img src="https://user-images.githubusercontent.com/82819729/188836417-cd01014e-1f75-43e0-b9a3-8ea90b581c34.jpg" width=30% height=30%>
   <img src="https://user-images.githubusercontent.com/82819729/188836293-4f55c827-6438-4351-bcb3-98b9ed6e7ec8.jpg" width=30% height=30%>
     </p>
+    
+   This is Marvel Heroes and Comics - a new app, which helps you to find out information in the deep and charming world of Marvel Comics!
+
+   Find your heroes! The full database of heroes, that ever made an appearence in the Marvel books, with the list of this comics and series and a small history.
+
+   Find your comics! Learn the information about your favourite episodes.
+
+   Make your Avengers! Select your favourite heroes in your super-team.
+
+   World of pictures! Download you favourite comics and heroes pictures straight into your phone.
